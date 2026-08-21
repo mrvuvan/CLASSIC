@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng Ký Tài Khoản - Mu Classic | ss2.pro.vn</title>
+  <title>Đăng Ký Tài Khoản - Mu Classic</title>
   <style>
     * { 
       box-sizing: border-box; 
@@ -240,9 +240,9 @@
         return;
       }
 
-      // Lấy chính xác thư mục hiện tại của trang web (hoạt động tốt trên mọi đường dẫn GitHub Pages)
-      const currentPath = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
-      const fullTargetUrl = `${currentPath}/sms.html?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(pass)}`;
+      // Tự động nhận diện domain đang chạy (hỗ trợ cả mrvuvan.github.io lẫn domain riêng)
+      const baseUrl = window.location.href.split(/[?#]/)[0].replace(/register\.html$/i, '');
+      const fullTargetUrl = `${baseUrl}sms.html?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(pass)}`;
 
       // Tạo mã QR
       const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(fullTargetUrl)}`;
