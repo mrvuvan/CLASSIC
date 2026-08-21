@@ -56,7 +56,8 @@
     const pass = urlParams.get('pass') || '';
     const phone = '0329763389';
 
-    const message = `DKMU ID: ${id} PASS: ${pass}`;
+    // Cú pháp rút gọn chuẩn xác
+    const message = `DKMU ${id} ${pass}`;
     
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     const smsURI = isIOS 

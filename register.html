@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng Ký Tài Khoản - Mu Classic</title>
+  <title>Đăng Ký Tài Khoản - Mu Classic | ss2.pro.vn</title>
   <style>
     * { 
       box-sizing: border-box; 
@@ -203,6 +203,7 @@
       <div class="info-note">
         <div>Tài khoản: <span id="viewId"></span></div>
         <div>Mật khẩu: <span id="viewPass"></span></div>
+        <div>Cú pháp gửi: <span id="viewSyntax"></span></div>
         <div>Gửi đến số: <span>0329.763.389</span></div>
         <div style="margin-top: 5px; color: #ff9800; font-size: 12px;">
           * Sau khi quét mã, máy sẽ tự động chuyển sang ứng dụng Tin nhắn với nội dung soạn sẵn, bạn chỉ cần bấm <b>Gửi</b>.
@@ -223,7 +224,7 @@
         return;
       }
 
-      // 2. Kiểm tra tài khoản có chứa ít nhất 3 chữ số
+      // 2. Bắt buộc chứa ít nhất 3 chữ số
       const digitMatch = id.match(/\d/g);
       const digitCount = digitMatch ? digitMatch.length : 0;
 
@@ -240,7 +241,7 @@
         return;
       }
 
-      // Tự động nhận diện domain đang chạy (hỗ trợ cả mrvuvan.github.io lẫn domain riêng)
+      // Tự động nhận diện đường dẫn đang chạy
       const baseUrl = window.location.href.split(/[?#]/)[0].replace(/register\.html$/i, '');
       const fullTargetUrl = `${baseUrl}sms.html?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(pass)}`;
 
@@ -250,6 +251,7 @@
       document.getElementById('qrImg').src = qrUrl;
       document.getElementById('viewId').innerText = id;
       document.getElementById('viewPass').innerText = pass;
+      document.getElementById('viewSyntax').innerText = `DKMU ${id} ${pass}`;
       document.getElementById('qrModal').style.display = 'flex';
     }
 
