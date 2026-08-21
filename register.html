@@ -40,7 +40,7 @@
       color: #d4af37; 
       font-size: 20px; 
       text-transform: uppercase; 
-      letter-spacing: 1px;
+      letter-spacing: 1px; 
     }
     .form-group { 
       margin-bottom: 15px; 
@@ -61,16 +61,16 @@
       color: #fff; 
       font-size: 15px; 
       outline: none; 
-      transition: border-color 0.2s;
+      transition: border-color 0.2s; 
     }
     .input-box:focus { 
       border-color: #d4af37; 
     }
-    .input-hint {
-      font-size: 12px;
-      color: #aaa;
-      margin-top: 4px;
-      display: block;
+    .input-hint { 
+      font-size: 12px; 
+      color: #aaa; 
+      margin-top: 4px; 
+      display: block; 
     }
     .btn-submit { 
       width: 100%; 
@@ -84,7 +84,7 @@
       cursor: pointer; 
       text-transform: uppercase; 
       margin-top: 10px; 
-      transition: background 0.2s;
+      transition: background 0.2s; 
     }
     .btn-submit:hover { 
       background: #f3e5ab; 
@@ -158,11 +158,11 @@
       background: #111; 
       padding: 12px; 
       border-radius: 6px; 
-      border: 1px solid #333;
+      border: 1px solid #333; 
     }
-    .info-note span {
-      color: #d4af37;
-      font-weight: bold;
+    .info-note span { 
+      color: #d4af37; 
+      font-weight: bold; 
     }
   </style>
 </head>
@@ -177,12 +177,13 @@
     <div class="form-group">
       <label>1. Tài khoản Game (ID)</label>
       <input type="text" id="regId" class="input-box" maxlength="10" placeholder="Ví dụ: chinh8899">
-      <span class="input-hint">* Yêu cầu: 4 - 10 ký tự và có ít nhất 3 hoặc 4 chữ số.</span>
+      <span class="input-hint">* Chỉ gồm chữ cái và số (4 - 10 ký tự), có ít nhất 3 chữ số, không dùng ký tự đặc biệt hay dấu cách.</span>
     </div>
 
     <div class="form-group">
       <label>2. Mật khẩu (Password)</label>
       <input type="text" id="regPass" class="input-box" maxlength="10" placeholder="Nhập mật khẩu (4 - 10 ký tự)">
+      <span class="input-hint">* Chỉ gồm chữ cái và số (không dùng ký tự đặc biệt).</span>
     </div>
 
     <button type="button" class="btn-submit" onclick="generateRegisterSMS()">Tạo Mã QR Đăng Ký</button>
@@ -217,31 +218,47 @@
       const id = document.getElementById('regId').value.trim();
       const pass = document.getElementById('regPass').value.trim();
 
-      // 1. Kiểm tra độ dài
+      // Biểu thức chính quy: Chỉ chấp nhận chữ cái thường, in hoa và số
+      const validAlphaNumeric = /^[a-zA-Z0-9]+$/;
+
+      // 1. Kiểm tra độ dài cơ bản (4 - 10 ký tự)
       if (!id || id.length < 4 || id.length > 10) {
         alert('Tên tài khoản (ID) phải từ 4 đến 10 ký tự!');
         document.getElementById('regId').focus();
         return;
       }
 
-      // 2. Bắt buộc chứa ít nhất 3 chữ số
-      const digitMatch = id.match(/\d/g);
-      const digitCount = digitMatch ? digitMatch.length : 0;
-
-      if (digitCount < 3) {
-        alert('Tên tài khoản bắt buộc phải kèm ít nhất 3 hoặc 4 chữ số!\n(Ví dụ: takumi123, chinh8899, member2026)');
+      // 2. Chặn ký tự đặc biệt hoặc khoảng trắng trong ID
+      if (!validAlphaNumeric.test(id)) {
+        alert('Tài khoản không được chứa ký tự đặc biệt, dấu câu, tiếng Việt có dấu hoặc khoảng trắng!\n(Chỉ dùng chữ cái a-z và số 0-9)');
         document.getElementById('regId').focus();
         return;
       }
 
-      // 3. Kiểm tra mật khẩu
+      // 3. Bắt buộc chứa ít nhất 3 chữ số
+      const digitMatch = id.match(/\d/g);
+      const digitCount = digitMatch ? digitMatch.length : 0;
+      if (digitCount < 3) {
+        alert('Tên tài khoản bắt buộc phải kèm ít nhất 3 hoặc 4 chữ số!\n(Ví dụ: ozawa123, member2026)');
+        document.getElementById('regId').focus();
+        return;
+      }
+
+      // 4. Kiểm tra độ dài mật khẩu (4 - 10 ký tự)
       if (!pass || pass.length < 4 || pass.length > 10) {
         alert('Mật khẩu phải từ 4 đến 10 ký tự!');
         document.getElementById('regPass').focus();
         return;
       }
 
-      // Tự động nhận diện đường dẫn đang chạy
+      // 5. Chặn ký tự đặc biệt hoặc khoảng trắng trong Mật khẩu
+      if (!validAlphaNumeric.test(pass)) {
+        alert('Mật khẩu không được chứa ký tự đặc biệt hoặc dấu cách!\n(Chỉ dùng chữ cái và chữ số)');
+        document.getElementById('regPass').focus();
+        return;
+      }
+
+      // Tự động nhận diện đường dẫn trang web đang chạy
       const baseUrl = window.location.href.split(/[?#]/)[0].replace(/register\.html$/i, '');
       const fullTargetUrl = `${baseUrl}sms.html?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(pass)}`;
 
