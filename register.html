@@ -176,7 +176,7 @@
 
     <div class="form-group">
       <label>1. Tài khoản Game (ID)</label>
-      <input type="text" id="regId" class="input-box" maxlength="10" placeholder="Ví dụ: chinh8899">
+      <input type="text" id="regId" class="input-box" maxlength="10" placeholder="Ví dụ: jav2026">
       <span class="input-hint">* Chỉ gồm chữ cái và số (4 - 10 ký tự), có ít nhất 3 chữ số, không dùng ký tự đặc biệt hay dấu cách.</span>
     </div>
 
@@ -239,7 +239,7 @@
       const digitMatch = id.match(/\d/g);
       const digitCount = digitMatch ? digitMatch.length : 0;
       if (digitCount < 3) {
-        alert('Tên tài khoản bắt buộc phải kèm ít nhất 3 hoặc 4 chữ số!\n(Ví dụ: ozawa123, jav2026)');
+        alert('Tên tài khoản bắt buộc phải kèm ít nhất 3 hoặc 4 chữ số!\n(Ví dụ: jav2026)');
         document.getElementById('regId').focus();
         return;
       }
