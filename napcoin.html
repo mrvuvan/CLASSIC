@@ -4,55 +4,237 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nạp Coin - Mu Classic | ss2.pro.vn</title>
-  <meta name="description" content="Trang nạp WCoinC tự động qua VietQR MBBank cho Mu Classic Season 2 - ss2.pro.vn. Nhanh chóng, uy tín, an toàn.">
+  <title>Nạp Coin Tự Động - Mu Classic | ss2.pro.vn</title>
+  <meta name="description" content="Trang nạp WCoinC tự động qua VietQR MBBank cho Mu Classic - ss2.pro.vn. Nhanh chóng, uy tín, an toàn.">
   <meta name="keywords" content="Mu Online, Mu Classic, ss2.pro.vn, Nap coin mu classic, Nap WCoin, Mu Season 2">
+  
   <style>
-    * { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-    body { background: #0a0a0a; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 15px; }
+    * { 
+      box-sizing: border-box; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    body { 
+      background: #0a0a0a; 
+      color: #fff; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      padding: 15px; 
+    }
     
-    .nap-card { background: rgba(20, 20, 20, 0.95); width: 100%; max-width: 450px; border-radius: 12px; padding: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.8); border: 1px solid #d4af37; }
-    .nap-header { text-align: center; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
-    .nap-header h2 { margin: 0; color: #d4af37; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; }
-    .nap-header p { margin: 5px 0 0; color: #aaa; font-size: 13px; }
+    .nap-card { 
+      background: rgba(20, 20, 20, 0.95); 
+      width: 100%; 
+      max-width: 450px; 
+      border-radius: 12px; 
+      padding: 25px; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8); 
+      border: 1px solid #d4af37; 
+    }
+    .nap-header { 
+      text-align: center; 
+      border-bottom: 1px solid #333; 
+      padding-bottom: 15px; 
+      margin-bottom: 20px; 
+    }
+    .nap-header h2 { 
+      margin: 0; 
+      color: #d4af37; 
+      font-size: 22px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+    }
+    .nap-header p { 
+      margin: 5px 0 0; 
+      color: #aaa; 
+      font-size: 13px; 
+    }
 
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 14px; color: #ddd; }
-    .input-box { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #444; background: #1a1a1a; color: #fff; font-size: 15px; outline: none; }
-    .input-box:focus { border-color: #d4af37; }
+    .form-group { 
+      margin-bottom: 18px; 
+    }
+    .form-group label { 
+      display: block; 
+      margin-bottom: 6px; 
+      font-weight: bold; 
+      font-size: 14px; 
+      color: #ddd; 
+    }
+    .input-box { 
+      width: 100%; 
+      padding: 12px; 
+      border-radius: 6px; 
+      border: 1px solid #444; 
+      background: #1a1a1a; 
+      color: #fff; 
+      font-size: 15px; 
+      outline: none; 
+      transition: border-color 0.2s;
+    }
+    .input-box:focus { 
+      border-color: #d4af37; 
+    }
     
-    .content-preview { background: #111; padding: 10px; border-radius: 6px; border: 1px dashed #d4af37; color: #d4af37; font-weight: bold; font-size: 14px; text-align: center; margin-top: 6px; letter-spacing: 0.5px; }
+    .content-preview { 
+      background: #111; 
+      padding: 12px; 
+      border-radius: 6px; 
+      border: 1px dashed #d4af37; 
+      color: #d4af37; 
+      font-weight: bold; 
+      font-size: 15px; 
+      text-align: center; 
+      margin-top: 6px; 
+      letter-spacing: 1px; 
+    }
 
-    .quick-amounts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px; }
-    .btn-quick { background: #222; border: 1px solid #444; color: #ccc; padding: 8px; border-radius: 6px; cursor: pointer; font-size: 13px; transition: all 0.2s; }
-    .btn-quick:hover { background: #d4af37; color: #000; font-weight: bold; border-color: #d4af37; }
+    .quick-amounts { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 8px; 
+      margin-top: 8px; 
+    }
+    .btn-quick { 
+      background: #222; 
+      border: 1px solid #444; 
+      color: #ccc; 
+      padding: 10px; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-size: 13px; 
+      font-weight: 500;
+      transition: all 0.2s; 
+    }
+    .btn-quick:hover { 
+      background: #d4af37; 
+      color: #000; 
+      font-weight: bold; 
+      border-color: #d4af37; 
+    }
 
-    .btn-submit { width: 100%; padding: 14px; background: #d4af37; border: none; border-radius: 6px; color: #000; font-weight: bold; font-size: 16px; cursor: pointer; text-transform: uppercase; margin-top: 10px; transition: background 0.2s; }
-    .btn-submit:hover { background: #f3e5ab; }
+    .btn-submit { 
+      width: 100%; 
+      padding: 14px; 
+      background: #d4af37; 
+      border: none; 
+      border-radius: 6px; 
+      color: #000; 
+      font-weight: bold; 
+      font-size: 16px; 
+      cursor: pointer; 
+      text-transform: uppercase; 
+      margin-top: 10px; 
+      transition: background 0.2s, transform 0.1s; 
+    }
+    .btn-submit:hover { 
+      background: #f3e5ab; 
+    }
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
 
-    .back-btn-container { text-align: center; margin-top: 15px; width: 100%; max-width: 450px; }
-    .back-link { display: inline-block; color: #d4af37; text-decoration: none; border: 1px solid #d4af37; padding: 8px 15px; border-radius: 6px; font-size: 14px; width: 100%; text-align: center; transition: all 0.2s; }
-    .back-link:hover { background: #d4af37; color: #000; font-weight: bold; }
+    .back-btn-container { 
+      text-align: center; 
+      margin-top: 15px; 
+      width: 100%; 
+      max-width: 450px; 
+    }
+    .back-link { 
+      display: inline-block; 
+      color: #d4af37; 
+      text-decoration: none; 
+      border: 1px solid #d4af37; 
+      padding: 10px 15px; 
+      border-radius: 6px; 
+      font-size: 14px; 
+      width: 100%; 
+      text-align: center; 
+      transition: all 0.2s; 
+    }
+    .back-link:hover { 
+      background: #d4af37; 
+      color: #000; 
+      font-weight: bold; 
+    }
 
-    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; }
-    .modal-content { background: #1a1a1a; padding: 25px; border-radius: 12px; width: 90%; max-width: 380px; text-align: center; position: relative; border: 1px solid #d4af37; }
-    .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; color: #aaa; cursor: pointer; }
-    .qr-img { width: 100%; max-width: 260px; border-radius: 8px; margin: 15px 0; border: 2px solid #fff; }
-    .info-box { text-align: left; background: #111; padding: 12px; border-radius: 6px; font-size: 13px; line-height: 1.6; border: 1px solid #333; }
-    .info-box span { color: #d4af37; font-weight: bold; }
+    .modal-overlay { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.85); 
+      justify-content: center; 
+      align-items: center; 
+      z-index: 1000; 
+    }
+    .modal-content { 
+      background: #1a1a1a; 
+      padding: 25px; 
+      border-radius: 12px; 
+      width: 90%; 
+      max-width: 400px; 
+      text-align: center; 
+      position: relative; 
+      border: 1px solid #d4af37; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+    }
+    .close-btn { 
+      position: absolute; 
+      top: 10px; 
+      right: 15px; 
+      font-size: 26px; 
+      color: #aaa; 
+      cursor: pointer; 
+      line-height: 1;
+    }
+    .close-btn:hover {
+      color: #fff;
+    }
+    .qr-img { 
+      width: 100%; 
+      max-width: 260px; 
+      border-radius: 8px; 
+      margin: 15px 0; 
+      border: 2px solid #fff; 
+      background: #fff;
+    }
+    .info-box { 
+      text-align: left; 
+      background: #111; 
+      padding: 12px 15px; 
+      border-radius: 6px; 
+      font-size: 13px; 
+      line-height: 1.8; 
+      border: 1px solid #333; 
+    }
+    .info-box span { 
+      color: #d4af37; 
+      font-weight: bold; 
+    }
+    .warning-note {
+      color: #ff9800;
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
 
   <div class="nap-card">
     <div class="nap-header">
-      <h2>Ủng Hộ Phát Triển SS2</h2>
-      <p>Xin chân thành cảm ơn sự đóng góp của bạn đối với Mu Classic</p>
+      <h2>Ủng Hộ Phát Triển</h2>
+      <p>Hệ thống nạp WCoinC tự động 24/7 - ss2.pro.vn</p>
     </div>
 
     <div class="form-group">
       <label>1. Tài khoản Game (ID)</label>
-      <input type="text" id="accountInput" class="input-box" placeholder="Nhập chính xác tài khoản Game" oninput="updateContent()">
+      <input type="text" id="accountInput" class="input-box" maxlength="10" placeholder="Nhập chính xác ID tài khoản" oninput="updateContent()">
     </div>
 
     <div class="form-group">
@@ -62,16 +244,16 @@
 
     <div class="form-group">
       <label>2. Số tiền nạp (VNĐ)</label>
-      <input type="number" id="amountInput" class="input-box" placeholder="Ví dụ: 50000" step="10000">
+      <input type="number" id="amountInput" class="input-box" placeholder="Tối thiểu 10,000 đ" step="10000">
       <div class="quick-amounts">
-        <button class="btn-quick" onclick="setAmount(50000)">50,000 đ</button>
-        <button class="btn-quick" onclick="setAmount(100000)">100,000 đ</button>
-        <button class="btn-quick" onclick="setAmount(200000)">200,000 đ</button>
-        <button class="btn-quick" onclick="setAmount(500000)">500,000 đ</button>
+        <button type="button" class="btn-quick" onclick="setAmount(50000)">50,000 đ</button>
+        <button type="button" class="btn-quick" onclick="setAmount(100000)">100,000 đ</button>
+        <button type="button" class="btn-quick" onclick="setAmount(200000)">200,000 đ</button>
+        <button type="button" class="btn-quick" onclick="setAmount(500000)">500,000 đ</button>
       </div>
     </div>
 
-    <button class="btn-submit" onclick="generateQRDirect()">Tạo Mã VietQR MBBank</button>
+    <button type="button" class="btn-submit" onclick="generateQRDirect()">Tạo Mã VietQR Nạp Tiền</button>
   </div>
 
   <div class="back-btn-container">
@@ -81,17 +263,21 @@
   <div class="modal-overlay" id="qrModal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
-      <h3 style="margin: 0; color: #d4af37;">QUÉT MÃ ĐỂ THANH TOÁN</h3>
-      <p style="font-size: 12px; color: #aaa; margin: 5px 0;">Mở App Ngân Hàng/Momo để quét mã MBBank</p>
+      <h3 style="margin: 0; color: #d4af37; font-size: 18px;">QUÉT MÃ ĐỂ NẠP COIN</h3>
+      <p style="font-size: 12px; color: #aaa; margin: 5px 0;">Mở ứng dụng Ngân hàng bất kỳ hoặc Ví Momo để quét mã</p>
 
-      <img id="qrImage" src="" alt="Mã VietQR MBBank" class="qr-img">
+      <img id="qrImage" src="" alt="Mã VietQR Thanh Toán" class="qr-img">
 
       <div class="info-box">
-        <p style="margin: 0;">Ngân hàng: <span>MBBank (Ngân hàng Quân Đội)</span></p>
-        <p style="margin: 0;">Số tài khoản: <span>240589888999</span></p>
-        <p style="margin: 0;">Chủ tài khoản: <span>Vu Van Chinh</span></p>
-        <p style="margin: 0;">Số tiền: <span id="displayAmount">0</span> VNĐ</p>
-        <p style="margin: 0;">Nội dung CK: <span id="displayContent">SS2</span></p>
+        <div>Ngân hàng: <span>MBBank (Ngân hàng Quân Đội)</span></div>
+        <div>Số tài khoản: <span>240589888999</span></div>
+        <div>Chủ tài khoản: <span>Vu Van Chinh</span></div>
+        <div>Số tiền: <span id="displayAmount">0</span> VNĐ</div>
+        <div>Nội dung CK: <span id="displayContent">NAMEID ...</span></div>
+      </div>
+
+      <div class="warning-note">
+        * Lưu ý: Giữ nguyên nội dung chuyển khoản để VPS tự động nhận diện và cộng Coin sau 30 giây.
       </div>
     </div>
   </div>
@@ -99,7 +285,7 @@
   <script>
     function updateContent() {
       const acc = document.getElementById('accountInput').value.trim();
-      document.getElementById('contentPreview').innerText = acc ? 'SS2 ' + acc : 'SS2 [Tên_Tài_Khoản]';
+      document.getElementById('contentPreview').innerText = acc ? 'NAMEID ' + acc : 'NAMEID [Tên_Tài_Khoản]';
     }
 
     function setAmount(val) {
@@ -110,19 +296,32 @@
       const account = document.getElementById('accountInput').value.trim();
       const amount = document.getElementById('amountInput').value.trim();
 
-      if (!account) return alert('Vui lòng nhập Tài khoản Game (ID)!');
-      if (!amount || parseInt(amount) < 10000) return alert('Số tiền tối thiểu là 10,000 VNĐ!');
+      if (!account) {
+        alert('Vui lòng nhập chính xác Tài khoản Game (ID)!');
+        document.getElementById('accountInput').focus();
+        return;
+      }
 
-      // Cấu hình MBBank
+      if (!amount || parseInt(amount, 10) < 10000) {
+        alert('Số tiền nạp tối thiểu là 10,000 VNĐ!');
+        document.getElementById('amountInput').focus();
+        return;
+      }
+
+      // Thông tin tài khoản nhận tiền
       const BANK_ID = 'MB';
       const ACCOUNT_NO = '240589888999';
       const ACCOUNT_NAME = 'Vu Van Chinh';
-      const transferContent = 'SS2 ' + account;
+      
+      // Tạo đúng cú pháp NAMEID <id> để khớp với Regex của VPS
+      const transferContent = 'NAMEID ' + account;
 
+      // Tạo URL mã VietQR trực tiếp
       const qrImageUrl = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent(ACCOUNT_NAME)}`;
 
+      // Đưa dữ liệu lên giao diện Modal
       document.getElementById('qrImage').src = qrImageUrl;
-      document.getElementById('displayAmount').innerText = parseInt(amount).toLocaleString('vi-VN');
+      document.getElementById('displayAmount').innerText = parseInt(amount, 10).toLocaleString('vi-VN');
       document.getElementById('displayContent').innerText = transferContent;
       document.getElementById('qrModal').style.display = 'flex';
     }
@@ -130,6 +329,14 @@
     function closeModal() {
       document.getElementById('qrModal').style.display = 'none';
     }
+
+    // Đóng Modal khi nhấp ra ngoài vùng khung popup
+    window.onclick = function(event) {
+      const modal = document.getElementById('qrModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
   </script>
 
 </body>
