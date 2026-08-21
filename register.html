@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Ký Tài Khoản - Mu Classic | ss2.pro.vn</title>
+  <style>
+    * { 
+      box-sizing: border-box; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    body { 
+      background: #0a0a0a; 
+      color: #fff; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      padding: 15px; 
+    }
+    .card { 
+      background: rgba(20, 20, 20, 0.95); 
+      width: 100%; 
+      max-width: 420px; 
+      border-radius: 12px; 
+      padding: 25px; 
+      border: 1px solid #d4af37; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8); 
+    }
+    .header { 
+      text-align: center; 
+      border-bottom: 1px solid #333; 
+      padding-bottom: 15px; 
+      margin-bottom: 20px; 
+    }
+    .header h2 { 
+      margin: 0; 
+      color: #d4af37; 
+      font-size: 20px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+    }
+    .form-group { 
+      margin-bottom: 15px; 
+    }
+    .form-group label { 
+      display: block; 
+      margin-bottom: 6px; 
+      font-weight: bold; 
+      font-size: 14px; 
+      color: #ddd; 
+    }
+    .input-box { 
+      width: 100%; 
+      padding: 12px; 
+      border-radius: 6px; 
+      border: 1px solid #444; 
+      background: #1a1a1a; 
+      color: #fff; 
+      font-size: 15px; 
+      outline: none; 
+      transition: border-color 0.2s;
+    }
+    .input-box:focus { 
+      border-color: #d4af37; 
+    }
+    .input-hint {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 4px;
+      display: block;
+    }
+    .btn-submit { 
+      width: 100%; 
+      padding: 14px; 
+      background: #d4af37; 
+      border: none; 
+      border-radius: 6px; 
+      color: #000; 
+      font-weight: bold; 
+      font-size: 16px; 
+      cursor: pointer; 
+      text-transform: uppercase; 
+      margin-top: 10px; 
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { 
+      background: #f3e5ab; 
+    }
+    .back-btn-container { 
+      text-align: center; 
+      margin-top: 15px; 
+      width: 100%; 
+      max-width: 420px; 
+    }
+    .back-link { 
+      display: inline-block; 
+      color: #d4af37; 
+      text-decoration: none; 
+      border: 1px solid #d4af37; 
+      padding: 10px 15px; 
+      border-radius: 6px; 
+      font-size: 14px; 
+      width: 100%; 
+      text-align: center; 
+      transition: all 0.2s; 
+    }
+    .back-link:hover { 
+      background: #d4af37; 
+      color: #000; 
+      font-weight: bold; 
+    }
+    .modal-overlay { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.85); 
+      justify-content: center; 
+      align-items: center; 
+      z-index: 1000; 
+    }
+    .modal-content { 
+      background: #1a1a1a; 
+      padding: 25px; 
+      border-radius: 12px; 
+      width: 90%; 
+      max-width: 380px; 
+      text-align: center; 
+      position: relative; 
+      border: 1px solid #d4af37; 
+    }
+    .close-btn { 
+      position: absolute; 
+      top: 10px; 
+      right: 15px; 
+      font-size: 24px; 
+      color: #aaa; 
+      cursor: pointer; 
+    }
+    .qr-img { 
+      width: 100%; 
+      max-width: 240px; 
+      border-radius: 8px; 
+      margin: 15px 0; 
+      background: #fff; 
+      padding: 8px; 
+    }
+    .info-note { 
+      color: #ddd; 
+      font-size: 13px; 
+      line-height: 1.6; 
+      text-align: left; 
+      background: #111; 
+      padding: 12px; 
+      border-radius: 6px; 
+      border: 1px solid #333;
+    }
+    .info-note span {
+      color: #d4af37;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="header">
+      <h2>Đăng Ký Tài Khoản</h2>
+      <p style="margin: 5px 0 0; color: #aaa; font-size: 13px;">Soạn tin nhắn SMS kích hoạt tài khoản</p>
+    </div>
+
+    <div class="form-group">
+      <label>1. Tài khoản Game (ID)</label>
+      <input type="text" id="regId" class="input-box" maxlength="10" placeholder="Ví dụ: chinh8899">
+      <span class="input-hint">* Yêu cầu: 4 - 10 ký tự và có ít nhất 3 hoặc 4 chữ số.</span>
+    </div>
+
+    <div class="form-group">
+      <label>2. Mật khẩu (Password)</label>
+      <input type="text" id="regPass" class="input-box" maxlength="10" placeholder="Nhập mật khẩu (4 - 10 ký tự)">
+    </div>
+
+    <button type="button" class="btn-submit" onclick="generateRegisterSMS()">Tạo Mã QR Soạn SMS</button>
+  </div>
+
+  <div class="back-btn-container">
+    <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+  </div>
+
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin: 0; color: #d4af37;">QUÉT MÃ GỬI SMS</h3>
+      <p style="font-size: 12px; color: #aaa; margin: 5px 0;">Mở Camera điện thoại hoặc Zalo để quét mã</p>
+
+      <img id="qrImg" src="" alt="QR Đăng ký SMS" class="qr-img">
+
+      <div class="info-note">
+        <div>Tài khoản: <span id="viewId"></span></div>
+        <div>Mật khẩu: <span id="viewPass"></span></div>
+        <div>Gửi đến số: <span>0329.763.389</span></div>
+        <div style="margin-top: 5px; color: #ff9800; font-size: 12px;">
+          * Sau khi quét mã, máy sẽ tự động chuyển sang ứng dụng Tin nhắn với nội dung soạn sẵn, bạn chỉ cần bấm <b>Gửi</b>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // SỐ ĐIỆN THOẠI NHẬN TIN NHẮN ĐĂNG KÝ
+    const ADMIN_PHONE = '0329763389';
+
+    function generateRegisterSMS() {
+      const id = document.getElementById('regId').value.trim();
+      const pass = document.getElementById('regPass').value.trim();
+
+      // 1. Kiểm tra độ dài cơ bản (4 - 10 ký tự)
+      if (!id || id.length < 4 || id.length > 10) {
+        alert('Tên tài khoản (ID) phải từ 4 đến 10 ký tự!');
+        document.getElementById('regId').focus();
+        return;
+      }
+
+      // 2. Kiểm tra tài khoản có chứa ít nhất 3 chữ số
+      const digitMatch = id.match(/\d/g);
+      const digitCount = digitMatch ? digitMatch.length : 0;
+
+      if (digitCount < 3) {
+        alert('Tên tài khoản bắt buộc phải kèm ít nhất 3 hoặc 4 chữ số!\n(Ví dụ: takumi123, chinh8899, member2026)');
+        document.getElementById('regId').focus();
+        return;
+      }
+
+      // 3. Kiểm tra mật khẩu (4 - 10 ký tự)
+      if (!pass || pass.length < 4 || pass.length > 10) {
+        alert('Mật khẩu phải từ 4 đến 10 ký tự!');
+        document.getElementById('regPass').focus();
+        return;
+      }
+
+      // Cú pháp nội dung SMS soạn sẵn
+      const smsBody = `DKMU ID: ${id} PASS: ${pass}`;
+
+      // Chuỗi URI mở ứng dụng SMS trên điện thoại
+      const smstoURI = `SMSTO:${ADMIN_PHONE}:${smsBody}`;
+
+      // Tạo mã QR trực tiếp qua API
+      const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(smstoURI)}`;
+
+      document.getElementById('qrImg').src = qrUrl;
+      document.getElementById('viewId').innerText = id;
+      document.getElementById('viewPass').innerText = pass;
+      document.getElementById('qrModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('qrModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('qrModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
