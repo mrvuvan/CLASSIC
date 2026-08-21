@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mu-Hanoi2 - Season2 Cày cuốc</title>
+    <meta name="description" content="Mu-Hanoi2, Classic - cày cuốc lâu dài.">
+    <meta name="keywords" content="Mu Online, Mu-Hanoi2, Mumienphi, Mu Season 2, Muhn, muhanoi, muhanoi2, muxua, mu2.0, Mu hoài niệm, Mu 2026, mu hay">
+    <style>
+        /* Reset cơ bản */
+        body { 
+            margin: 0; padding: 0; font-family: Arial, sans-serif; 
+            background: #000 url('flame.png') no-repeat center center fixed; 
+            background-size: cover; color: #fff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center;
+        }
+
+        /* --- PHẦN TIÊU ĐỀ --- */
+        .header-text { text-align: center; z-index: 5; margin-bottom: 40px; }
+        
+        .title-main { 
+            color: red; font-size: 5.25vw; font-weight: bold; 
+            -webkit-text-stroke: 1.5px #fff; text-stroke: 1.5px #fff; 
+        }
+        .title-sub { 
+            color: #ff00ff; font-size: 2.5vw; font-weight: bold; margin-top: 10px;
+            text-decoration: underline; text-underline-offset: 8px;
+            -webkit-text-stroke: 0.5px #fff; text-stroke: 0.5px #fff;
+        }
+        .title-desc { 
+            color: blue; font-size: 3vw; font-weight: bold; margin-top: 15px;
+            -webkit-text-stroke: 1.5px #fff; text-stroke: 1.5px #fff;
+        }
+        .open-date { 
+            color: #d4af37; font-size: 2.2vw; font-weight: bold; margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Menu góc phải trên */
+        .top-right-nav { 
+            position: absolute; top: 20px; right: 20px; 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; z-index: 10; 
+        }
+        
+        /* Cấu hình nút bấm */
+        .nav-link, .main-btn { 
+            color: #fff !important; 
+            text-decoration: none !important; 
+            border: 1px solid #d4af37; 
+            border-radius: 4px; 
+            background: rgba(0,0,0,0.7) !important; 
+            text-align: center; 
+            display: inline-block;
+            transition: all 0.3s ease !important;
+        }
+        
+        .nav-link { padding: 8px 12px; font-size: 14px; }
+        
+        /* Menu chính */
+        .center-menu { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+        .main-btn { padding: 10px 25px; width: 220px; font-size: 16px; }
+
+        /* Hiệu ứng khi di chuột vào (Hover) */
+        .nav-link:hover, .main-btn:hover { 
+            background: #d4af37 !important; 
+            color: #000 !important; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+
+        /* --- TỐI ƯU MOBILE --- */
+        @media (max-width: 768px) {
+            .title-main { font-size: 10vw; }
+            .title-sub { font-size: 5vw; }
+            .title-desc { font-size: 7vw; }
+            .open-date { font-size: 4.5vw; }
+            .top-right-nav { top: 10px; left: 10px; right: 10px; }
+            .nav-link { font-size: 10px; padding: 4px; }
+            .main-btn { width: 80%; padding: 8px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-text">
+        <div class="title-main">Mu-Hanoi2</div>
+        <div class="title-sub">Season2 - Classic</div>
+        <div class="title-desc">Sever - Cày Cuốc - Drop all in Game</div>
+        <div class="title-desc">Không Top - Không Webshop - Không Dòng Ẩn</div>
+        <div class="open-date">Open Beta 10h Thứ 7 - ngày 08/08/2026</div>
+    </div>
+
+    <div class="top-right-nav">
+    <!-- Nút Tải -->
+    <a href="https://drive.google.com/file/d/1Z738b2xVWBGC3NbMOyUwdyCW--gEGVrV/view?usp=sharing" class="nav-link">Tải Google</a>
+    <a href="https://mega.nz/file/u7R1jR7B#FI1gAhovkhhAd-hlUr_8jE-En93cyphKcKOrVqRkHYg" class="nav-link">Tải Mega</a>
+    <a href="https://www.facebook.com/profile.php?id=61585804807617" class="nav-link">FaceBook</a>
+    <a href="https://zalo.me/g/7arrpeigv9pkbwrmyrta" class="nav-link">Nhóm Zalo</a>
+    <a href="https://muhanoi2.online/napcoin.html" class="nav-link">Phát Triển</a>
+    </div>
+
+    <div class="center-menu">
+        <a href="thongtin.html" class="main-btn">Thông tin Server</a>
+        <a href="lotrinh.html" class="main-btn">Lộ trình</a>
+        <a href="huongdan.html" class="main-btn">Hướng dẫn</a>
+        <a href="gioithieu.html" class="main-btn">Giới thiệu</a>
+		<a href="taigame.html" class="main-btn">Tải Game</a>
+    </div>
+
+</body>
+</html>

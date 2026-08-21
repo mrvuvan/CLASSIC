@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nạp WCoinC - Muhanoi2.Online</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #121212; color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 15px; }
+    .nap-card { background: #1e1e2e; width: 100%; max-width: 450px; border-radius: 12px; padding: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); border: 1px solid #333; }
+    .nap-header { text-align: center; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px; }
+    .nap-header h2 { margin: 0; color: #7b2cbf; font-size: 22px; text-transform: uppercase; }
+    .nap-header p { margin: 5px 0 0; color: #aaa; font-size: 13px; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: bold; font-size: 14px; color: #ddd; }
+    .input-box { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #444; background: #2a2a3d; color: #fff; font-size: 15px; outline: none; }
+    .input-box:focus { border-color: #7b2cbf; }
+    
+    .content-preview { background: #111; padding: 10px; border-radius: 6px; border: 1px dashed #7b2cbf; color: #9d4edd; font-weight: bold; font-size: 14px; text-align: center; margin-top: 6px; }
+
+    .quick-amounts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px; }
+    .btn-quick { background: #2a2a3d; border: 1px solid #444; color: #fff; padding: 8px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    .btn-quick:hover { background: #7b2cbf; color: #fff; font-weight: bold; }
+
+    .btn-submit { width: 100%; padding: 14px; background: #7b2cbf; border: none; border-radius: 6px; color: #fff; font-weight: bold; font-size: 16px; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
+    .btn-submit:hover { background: #9d4edd; }
+
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; }
+    .modal-content { background: #1e1e2e; padding: 25px; border-radius: 12px; width: 90%; max-width: 380px; text-align: center; position: relative; border: 1px solid #7b2cbf; }
+    .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; color: #aaa; cursor: pointer; }
+    .qr-img { width: 100%; max-width: 260px; border-radius: 8px; margin: 15px 0; border: 2px solid #fff; }
+    .info-box { text-align: left; background: #111; padding: 12px; border-radius: 6px; font-size: 13px; line-height: 1.6; }
+    .info-box span { color: #9d4edd; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <div class="nap-card">
+    <div class="nap-header">
+      <h2>Ủng Hộ Phát Triển</h2>
+      <p>Xin chân thành cảm ơn sự đóng góp của bạn</p>
+    </div>
+
+    <div class="form-group">
+      <label>1. Tài khoản Game (ID)</label>
+      <input type="text" id="accountInput" class="input-box" placeholder="Nhập chính xác tài khoản Game" oninput="updateContent()">
+    </div>
+
+    <div class="form-group">
+      <label>Nội dung chuyển khoản tự động:</label>
+      <div class="content-preview" id="contentPreview">HN02 [Tên_Tài_Khoản]</div>
+    </div>
+
+    <div class="form-group">
+      <label>2. Số tiền nạp (VNĐ)</label>
+      <input type="number" id="amountInput" class="input-box" placeholder="Ví dụ: 50000" step="10000">
+      <div class="quick-amounts">
+        <button class="btn-quick" onclick="setAmount(50000)">50,000 đ</button>
+        <button class="btn-quick" onclick="setAmount(100000)">100,000 đ</button>
+        <button class="btn-quick" onclick="setAmount(200000)">200,000 đ</button>
+        <button class="btn-quick" onclick="setAmount(500000)">500,000 đ</button>
+      </div>
+    </div>
+
+    <button class="btn-submit" onclick="generateQRDirect()">Tạo Mã VietQR MBBank</button>
+  </div>
+
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin: 0; color: #9d4edd;">QUÉT MÃ ĐỂ THANH TOÁN</h3>
+      <p style="font-size: 12px; color: #aaa; margin: 5px 0;">Mở App Ngân Hàng/Momo để quét mã MBBank</p>
+
+      <img id="qrImage" src="" alt="Mã VietQR MBBank" class="qr-img">
+
+      <div class="info-box">
+        <p style="margin: 0;">Ngân hàng: <span>MBBank (Ngân hàng Quân Đội)</span></p>
+        <p style="margin: 0;">Số tài khoản: <span>240589888999</span></p>
+        <p style="margin: 0;">Chủ tài khoản: <span>Vu Van Chinh</span></p>
+        <p style="margin: 0;">Số tiền: <span id="displayAmount">0</span> VNĐ</p>
+        <p style="margin: 0;">Nội dung CK: <span id="displayContent">HN02</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateContent() {
+      const acc = document.getElementById('accountInput').value.trim();
+      document.getElementById('contentPreview').innerText = acc ? 'HN02 ' + acc : 'HN02 [Tên_Tài_Khoản]';
+    }
+
+    function setAmount(val) {
+      document.getElementById('amountInput').value = val;
+    }
+
+    function generateQRDirect() {
+      const account = document.getElementById('accountInput').value.trim();
+      const amount = document.getElementById('amountInput').value.trim();
+
+      if (!account) return alert('Vui lòng nhập Tài khoản Game (ID)!');
+      if (!amount || parseInt(amount) < 10000) return alert('Số tiền tối thiểu là 10,000 VNĐ!');
+
+      // Cấu hình MBBank
+      const BANK_ID = 'MB';
+      const ACCOUNT_NO = '240589888999';
+      const ACCOUNT_NAME = 'Vu Van Chinh';
+      const transferContent = 'HN02 ' + account;
+
+      const qrImageUrl = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent(ACCOUNT_NAME)}`;
+
+      document.getElementById('qrImage').src = qrImageUrl;
+      document.getElementById('displayAmount').innerText = parseInt(amount).toLocaleString('vi-VN');
+      document.getElementById('displayContent').innerText = transferContent;
+      document.getElementById('qrModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('qrModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

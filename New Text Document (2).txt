@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BastVN MuOnline</title>
+    <style>
+        /* CSS Cơ bản */
+        body { margin: 0; font-family: Arial; background: #000; color: #fff; }
+        .menu { display: flex; gap: 20px; padding: 20px; justify-content: center; }
+        .menu-item { cursor: pointer; padding: 10px; background: #333; border-radius: 5px; }
+        
+        /* CSS cho các lớp phụ (Popup) */
+        .sub-page { 
+            display: none; position: fixed; top: 10%; left: 10%; width: 80%; height: 80%; 
+            background: rgba(0,0,0,0.9); border: 2px solid #d4af37; padding: 20px; z-index: 100;
+        }
+        .close-btn { cursor: pointer; color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <div class="menu-item">
+            Tải Game: <a href="LINK_GOOGLE" style="color:white">Google</a> / <a href="LINK_MEGA" style="color:white">Mega</a>
+        </div>
+        <div class="menu-item"><a href="LINK_NHOM" style="color:white; text-decoration:none">Nhóm (Zalo/Discord)</a></div>
+        <div class="menu-item"><a href="LINK_FANPAGE" style="color:white; text-decoration:none">Fanpage FB</a></div>
+        <div class="menu-item" onclick="showPage('info-page')">Thông tin Server</div>
+        <div class="menu-item" onclick="showPage('guide-page')">Hướng dẫn Boss/Drop</div>
+    </div>
+
+    <div id="info-page" class="sub-page">
+        <span class="close-btn" onclick="hidePage('info-page')">X ĐÓNG</span>
+        <h2>Thông tin Server</h2>
+        <p>Đây là nội dung thông tin server của bạn...</p>
+    </div>
+
+    <div id="guide-page" class="sub-page">
+        <span class="close-btn" onclick="hidePage('guide-page')">X ĐÓNG</span>
+        <h2>Hướng dẫn Boss & Drop</h2>
+        <p>Chi tiết các vị trí Boss và tỷ lệ rớt đồ...</p>
+    </div>
+
+    <script>
+        function showPage(id) { document.getElementById(id).style.display = 'block'; }
+        function hidePage(id) { document.getElementById(id).style.display = 'none'; }
+    </script>
+</body>
+</html>

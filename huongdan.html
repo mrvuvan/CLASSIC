@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mu-Hanoi2 - Season2 Cày cuốc</title>
+    <meta name="description" content="Mu-Hanoi2, server cày cuốc lâu dài, không Webshop, Không Xshop, công bằng và hoài niệm.">
+    <meta name="keywords" content="Mu Online, Mu-Hanoi2, Mumienphi, Mu Season 2, Muhn, muhanoi, muhanoi2, muxua, mu2.0, Mu hoài niệm, Mu 2026, mu hay">
+    <style>
+        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        .wrapper { display: flex; max-width: 1000px; margin: 20px auto; gap: 20px; padding: 10px; }
+        
+        .sidebar { width: 250px; background: rgba(20, 20, 20, 0.9); border: 1px solid #d4af37; padding: 20px; height: fit-content; }
+        .sidebar a { display: block; color: #fff; text-decoration: none; padding: 10px 0; border-bottom: 1px solid #333; }
+        .sidebar a:hover { color: #d4af37; }
+
+        .main-content { flex: 1; background: rgba(20, 20, 20, 0.9); border: 1px solid #d4af37; padding: 30px; }
+        h1 { color: #d4af37; margin-bottom: 20px; }
+
+        /* Bảng Boss Drop */
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 40px; }
+        th, td { border: 1px solid #555; padding: 12px; text-align: left; }
+        th { background: #333; color: #d4af37; }
+        tr:nth-child(even) { background: #1a1a1a; }
+        
+        /* CSS cho phần Cộng Hưởng */
+        .timeline { list-style: none; padding: 0; }
+        .timeline-item { margin-bottom: 30px; border-left: 3px solid #d4af37; padding-left: 20px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 15px; height: 15px; background: #d4af37; border-radius: 50%; }
+        
+        /* ĐỔI MÀU TEXT BƯỚC 1, 2 Ở ĐÂY */
+        .step-title { color: #ffffff; font-weight: bold; font-size: 1.2em; margin-bottom: 10px; }
+        .step-detail { margin-bottom: 5px; color: #ccc; }
+        
+        .back-link { display: inline-block; margin-top: 30px; color: #d4af37; text-decoration: none; border: 1px solid #d4af37; padding: 8px 15px; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h3>Menu</h3>
+        <a href="index.html">Trang chủ</a>
+        <a href="thongtin.html">Thông tin Server</a>
+        <a href="lotrinh.html">Lộ trình</a>
+        <a href="huongdan.html">Hướng dẫn</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+		<a href="taigame.html">Tải Game</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Hướng dẫn Boss & Drop</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên Boss</th>
+                    <th>Địa điểm (Map)</th>
+                    <th>Vật phẩm Drop</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Seketon King</td><td>Lorencia</td><td>Ngọc Cộng Hưởng</td></tr>
+                <tr><td>White Wizard</td><td>Devias</td><td>Ngọc Cộng Hưởng</td></tr>
+                <tr><td>Red Dragon</td><td>Noria</td><td>Chao,Life</td></tr>
+                <tr><td>Boss Golden</td><td>Tất cả các map</td><td>Hộp Kundun 1-7</td></tr>
+                <tr><td>Cursed Dragon</td><td>Icarus</td><td>Ring, Pen</td></tr>
+                <tr><td>Rabit</td><td>Atlans</td><td>B,S,H</td></tr>
+                <tr><td>BC 5 6 7, DV 5 6</td><td>Exp</td><td>Hoa Mai</td></tr>
+            </tbody>
+        </table>
+        <h1>Hướng dẫn Tiến cấp nhân vật</h1>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="step-title">Sau khi reset</div>
+                <div class="step-detail"><b>Gặp NPC Quest nhận ngọc Cre</div>
+                <div class="step-detail"><b>Cất ngọc Cre vào ngân hàng</div>
+                <div class="step-detail"><b>Menu (F6) chọn Tiến Cấp</div>
+				<div class="step-detail"><b>Chuẩn bị sẵn ngọc cần thiết</div>
+				<div class="step-detail"><b>Tiến cấp nhân vật để nhận chỉ số đặc biệt</div>
+				<div class="step-detail"><b>Tối đa 12 cấp nhân vật ( 12 reset )</div>
+
+            </li>            
+        </ul>
+		<h1>Hướng dẫn Auto nhặt item</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Thêm Vào Auto</th>
+					<th>Item</th>
+                    <th>Thêm Vào Auto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Thiên Thần</td><td>Thien Than</td><td>Tiểu quỷ</td><td>Tieu quy</td>
+                <tr><td>Hộp kundun</td><td>Box</td><td>Ngôi Sao</td><td>Sao</td>
+                <tr><td>Linh hồn chiến mã</td><td>Chien ma</td><td>Lông Vũ</td><td>Long Vu</td>
+                <tr><td>Huy Hiệu Hoàng Tộc</td><td>Huy Hieu</td><td>Hoa Mai</td><td>Hoa Mai</td>
+            </tbody>
+        </table>
+
+        <h1>Hướng dẫn Cộng Hưởng</h1>
+        <ul class="timeline">            
+            <li class="timeline-item">
+                <div class="step-title">Cộng Hưởng Item</div>
+                <div class="step-detail"><b>Địa điểm:</b> Gặp NPC Cộng Hưởng Item ở Lorencia</div>
+                <div class="step-detail"><b>Nguyên liệu:</b> Item chính và item phụ phải cùng Cấp, Item nguyên liệu là Ngọc Cộng Hưởng</div>
+                <div class="step-detail"><b>Tỉ lệ:</b> 30%</div>
+                <div class="step-detail"><b>Có thể cộng hưởng full dòng</div>
+            </li>
+        </ul>
+
+		<h1>Hướng dẫn Quy đổi Đồng Xu May Mắn </h1>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="step-title">Gặp Npc Delgado ở Lorencia</div>
+				<div class="step-title">Chọn đăng kí đồng xu để tích xu</div>
+				<div class="step-title">Chọn Hoán đổi đồng xu để nhận quà</div>
+                <div class="step-detail"><b>10 đồng xu</b>Nhận 10B hoặc 10S</div>
+                <div class="step-detail"><b>20 đồng xu</b>Nhận 10C hoặc 10L hoặc 10H</div>
+                <div class="step-detail"><b>30 đồng xu</b>Nhận 1ngọc cộng hưởng</div>
+            </li>
+            		
+        </ul>
+	
+		<h1>Hướng dẫn Quay Pet</h1>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="step-title">Quay Đại Quỷ</div>
+                <div class="step-detail"><b>Địa điểm:</b> Gặp NPC Goblin ở Noria</div>
+                <div class="step-detail"><b>Nguyên liệu:</b> 10 Tieu Quy, 1c</div>
+                <div class="step-detail"><b>Tỉ lệ:</b> 100% Tạo ra Demon</div>
+            </li>
+            
+            <li class="timeline-item">
+                 <div class="step-title">Quay Nữ thần bảo hộ</div>
+                <div class="step-detail"><b>Địa điểm:</b> Gặp NPC Goblin ở Noria</div>
+                <div class="step-detail"><b>Nguyên liệu:</b> 10 Thien than, 1c</div>
+                <div class="step-detail"><b>Tỉ lệ:</b> 100% Tạo ra Nữ thần bảo hộ</div>
+            </li>						
+			<li class="timeline-item">
+                 <div class="step-title">Quay Pet Tinh Linh</div>
+                <div class="step-detail"><b>Địa điểm:</b> Gặp NPC Goblin ở Noria</div>
+                <div class="step-detail"><b>Nguyên liệu:</b> 1 Nữ thần bảo hộ, 1 Đại Quỷ, 1 Chaos</div>
+                <div class="step-detail"><b>Tỉ lệ:</b> 100% Tạo ra Pet Tinh Linh</div>
+            </li>
+			<li class="timeline-item">
+                 <div class="step-title">Quay Gold Fenrir</div>
+                <div class="step-detail"><b>Địa điểm:</b> Gặp NPC Goblin ở Noria</div>
+                <div class="step-detail"><b>Nguyên liệu:</b> 1 Pet Tinh Linh, 1 Linh Hồn Sói Tinh ( Sói thường ), 1 Chaos, 10B, 10S</div>
+                <div class="step-detail"><b>Tỉ lệ:</b> 30% Tạo ra Fenrir</div>
+            </li>
+			
+			<li class="timeline-item">
+                 <div class="step-title">Quay Horse</div>
+                <div class="step-detail"><b>Địa điểm:</b> Gặp NPC Goblin ở Noria</div>
+                <div class="step-detail"><b>Nguyên liệu:</b> 1 Linh Hồn Chien Ma, 1c, 5B, 5S</div>
+                <div class="step-detail"><b>Tỉ lệ:</b> 60% Tạo ra Ghost Horse</div>
+            </li>
+		
+        </ul>
+        <h1>Hướng dẫn Đổi Class</h1>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="step-title">Đổi Class</div>
+                <div class="step-detail"><b>Dùng lệnh /doiclass (class mong muốn)</div>
+                <div class="step-detail"><b>Tên viết tắt : dw dk ef mg dl</div>
+                <div class="step-detail"><b>Phí đổi 100kwcoin ( Không đổi đồ )</div>
+            </li>            
+        </ul>
+        <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+    </div>
+</div>
+
+</body>
+</html>
