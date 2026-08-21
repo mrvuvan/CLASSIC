@@ -216,7 +216,7 @@
       const id = document.getElementById('regId').value.trim();
       const pass = document.getElementById('regPass').value.trim();
 
-      // 1. Kiểm tra độ dài cơ bản (4 - 10 ký tự)
+      // 1. Kiểm tra độ dài
       if (!id || id.length < 4 || id.length > 10) {
         alert('Tên tài khoản (ID) phải từ 4 đến 10 ký tự!');
         document.getElementById('regId').focus();
@@ -233,18 +233,18 @@
         return;
       }
 
-      // 3. Kiểm tra mật khẩu (4 - 10 ký tự)
+      // 3. Kiểm tra mật khẩu
       if (!pass || pass.length < 4 || pass.length > 10) {
         alert('Mật khẩu phải từ 4 đến 10 ký tự!');
         document.getElementById('regPass').focus();
         return;
       }
 
-      // Tự động tạo link điều hướng trung gian qua file sms.html cùng domain
-      const redirectBaseUrl = `${window.location.origin}/sms.html`;
-      const fullTargetUrl = `${redirectBaseUrl}?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(pass)}`;
+      // Lấy chính xác thư mục hiện tại của trang web (hoạt động tốt trên mọi đường dẫn GitHub Pages)
+      const currentPath = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
+      const fullTargetUrl = `${currentPath}/sms.html?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(pass)}`;
 
-      // Tạo mã QR chứa đường dẫn Web điều hướng
+      // Tạo mã QR
       const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(fullTargetUrl)}`;
 
       document.getElementById('qrImg').src = qrUrl;
