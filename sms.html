@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đang mở ứng dụng tin nhắn...</title>
+  <style>
+    body { background: #0a0a0a; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; text-align: center; }
+    .box { background: #1a1a1a; padding: 25px; border-radius: 12px; border: 1px solid #d4af37; max-width: 400px; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.7); }
+    .btn-sms { display: inline-block; width: 100%; padding: 14px; background: #d4af37; color: #000; font-weight: bold; text-decoration: none; border-radius: 6px; font-size: 16px; margin-top: 15px; }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h3 style="color: #d4af37; margin: 0 0 10px;">XÁC NHẬN ĐĂNG KÝ</h3>
+    <p style="font-size: 14px; color: #aaa; margin: 0;">Đang tự động chuyển hướng sang ứng dụng Tin nhắn SMS...</p>
+    
+    <a id="smsLink" href="#" class="btn-sms">BẤM VÀO ĐÂY ĐỂ GỬI SMS</a>
+  </div>
+
+  <script>
+    // Lấy thông tin ID và PASS truyền qua URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id') || '';
+    const pass = urlParams.get('pass') || '';
+    const phone = '0329763389';
+
+    const message = `DKMU ID: ${id} PASS: ${pass}`;
+    
+    // Tự động nhận diện thiết bị iOS / Android để tạo cú pháp mở SMS chuẩn
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const smsURI = isIOS 
+      ? `sms:${phone}&body=${encodeURIComponent(message)}`
+      : `sms:${phone}?body=${encodeURIComponent(message)}`;
+
+    document.getElementById('smsLink').href = smsURI;
+
+    // Tự động kích hoạt mở ứng dụng SMS
+    window.location.href = smsURI;
+  </script>
+</body>
+</html>
