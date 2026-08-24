@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mua Gói VIP - Mu Classic | ss2.pro.vn</title>
+  <meta name="description" content="Kích hoạt gói VIP máy chủ Mu Classic: Tăng Exp, Tăng tỷ lệ ngọc và Chaos Machine tự động.">
+  
+  <style>
+    * { 
+      box-sizing: border-box; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    body { 
+      background: #0a0a0a; 
+      color: #fff; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      padding: 15px; 
+    }
+    
+    .vip-card { 
+      background: rgba(20, 20, 20, 0.95); 
+      width: 100%; 
+      max-width: 450px; 
+      border-radius: 12px; 
+      padding: 25px; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8); 
+      border: 1px solid #d4af37; 
+    }
+
+    .vip-header { 
+      text-align: center; 
+      border-bottom: 1px solid #333; 
+      padding-bottom: 15px; 
+      margin-bottom: 18px; 
+    }
+    .vip-header h2 { 
+      margin: 0; 
+      color: #d4af37; 
+      font-size: 22px; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+    }
+    .vip-header p { 
+      margin: 5px 0 0; 
+      color: #aaa; 
+      font-size: 13px; 
+    }
+
+    /* Bảng quyền lợi VIP */
+    .perks-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 18px;
+    }
+    .perks-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: #d4af37;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .perk-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #ccc;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed #222;
+    }
+    .perk-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .perk-item span {
+      color: #00ff7f;
+      font-weight: bold;
+    }
+
+    .form-group { 
+      margin-bottom: 16px; 
+    }
+    .form-group label { 
+      display: block; 
+      margin-bottom: 6px; 
+      font-weight: bold; 
+      font-size: 14px; 
+      color: #ddd; 
+    }
+    .input-box { 
+      width: 100%; 
+      padding: 12px; 
+      border-radius: 6px; 
+      border: 1px solid #444; 
+      background: #1a1a1a; 
+      color: #fff; 
+      font-size: 15px; 
+      outline: none; 
+      transition: border-color 0.2s; 
+    }
+    .input-box:focus { 
+      border-color: #d4af37; 
+    }
+
+    /* Chọn gói VIP */
+    .vip-packages {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pkg-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1a1a1a;
+      border: 1px solid #444;
+      padding: 12px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pkg-label:hover {
+      border-color: #d4af37;
+    }
+    .pkg-label.active {
+      border-color: #d4af37;
+      background: rgba(212, 175, 55, 0.1);
+    }
+    .pkg-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .pkg-left input {
+      accent-color: #d4af37;
+    }
+    .pkg-price {
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .content-preview { 
+      background: #111; 
+      padding: 10px; 
+      border-radius: 6px; 
+      border: 1px dashed #d4af37; 
+      color: #d4af37; 
+      font-weight: bold; 
+      font-size: 14px; 
+      text-align: center; 
+      margin-top: 6px; 
+    }
+
+    .btn-submit { 
+      width: 100%; 
+      padding: 14px; 
+      background: #d4af37; 
+      border: none; 
+      border-radius: 6px; 
+      color: #000; 
+      font-weight: bold; 
+      font-size: 16px; 
+      cursor: pointer; 
+      text-transform: uppercase; 
+      margin-top: 10px; 
+      transition: background 0.2s; 
+    }
+    .btn-submit:hover { 
+      background: #f3e5ab; 
+    }
+
+    .back-btn-container { 
+      text-align: center; 
+      margin-top: 15px; 
+      width: 100%; 
+      max-width: 450px; 
+    }
+    .back-link { 
+      display: inline-block; 
+      color: #d4af37; 
+      text-decoration: none; 
+      border: 1px solid #d4af37; 
+      padding: 10px 15px; 
+      border-radius: 6px; 
+      font-size: 14px; 
+      width: 100%; 
+      text-align: center; 
+      transition: all 0.2s; 
+    }
+    .back-link:hover { 
+      background: #d4af37; 
+      color: #000; 
+      font-weight: bold; 
+    }
+
+    /* Modal Styling */
+    .modal-overlay { 
+      display: none; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.85); 
+      justify-content: center; 
+      align-items: center; 
+      z-index: 1000; 
+    }
+    .modal-content { 
+      background: #1a1a1a; 
+      padding: 25px; 
+      border-radius: 12px; 
+      width: 90%; 
+      max-width: 380px; 
+      text-align: center; 
+      position: relative; 
+      border: 1px solid #d4af37; 
+    }
+    .close-btn { 
+      position: absolute; 
+      top: 10px; 
+      right: 15px; 
+      font-size: 24px; 
+      color: #aaa; 
+      cursor: pointer; 
+    }
+    .qr-img { 
+      width: 100%; 
+      max-width: 240px; 
+      border-radius: 8px; 
+      margin: 15px 0; 
+      background: #fff; 
+      padding: 6px; 
+    }
+    .info-box { 
+      text-align: left; 
+      background: #111; 
+      padding: 12px; 
+      border-radius: 6px; 
+      font-size: 13px; 
+      line-height: 1.6; 
+      border: 1px solid #333; 
+    }
+    .info-box span { 
+      color: #d4af37; 
+      font-weight: bold; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="vip-card">
+    <div class="vip-header">
+      <h2>Kích Hoạt Gói VIP</h2>
+      <p>Đặc quyền tăng tốc và nâng cao sức mạnh nhân vật</p>
+    </div>
+
+    <!-- Khung Quyền Lợi -->
+    <div class="perks-box">
+      <span class="perks-title">Đặc Quyền Thành Viên VIP:</span>
+      <div class="perk-item">
+        <div>Kinh nghiệm máy chủ (EXP)</div>
+        <span>+20%</span>
+      </div>
+      <div class="perk-item">
+        <div>Tỷ lệ đập Ngọc (Soul, Life...)</div>
+        <span>+10%</span>
+      </div>
+      <div class="perk-item">
+        <div>Tỷ lệ máy Chaos Gobin</div>
+        <span>+10%</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>1. Tài khoản Game (ID)</label>
+      <input type="text" id="vipAccount" class="input-box" maxlength="10" placeholder="Nhập tài khoản nhận VIP" oninput="updateContent()">
+    </div>
+
+    <div class="form-group">
+      <label>2. Chọn Gói VIP</label>
+      <div class="vip-packages">
+        <label class="pkg-label active" onclick="selectPackage(70000, '7D', this)">
+          <div class="pkg-left">
+            <input type="radio" name="vipPkg" value="70000" checked>
+            <span>Gói VIP 7 Ngày</span>
+          </div>
+          <span class="pkg-price">70,000 đ</span>
+        </label>
+
+        <label class="pkg-label" onclick="selectPackage(120000, '15D', this)">
+          <div class="pkg-left">
+            <input type="radio" name="vipPkg" value="120000">
+            <span>Gói VIP 15 Ngày</span>
+          </div>
+          <span class="pkg-price">120,000 đ</span>
+        </label>
+
+        <label class="pkg-label" onclick="selectPackage(200000, '30D', this)">
+          <div class="pkg-left">
+            <input type="radio" name="vipPkg" value="200000">
+            <span>Gói VIP 30 Ngày</span>
+          </div>
+          <span class="pkg-price">200,000 đ</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Nội dung chuyển khoản tự động:</label>
+      <div class="content-preview" id="contentPreview">VIP7D [Tên_Tài_Khoản]</div>
+    </div>
+
+    <button type="button" class="btn-submit" onclick="generateVipQR()">Tạo Mã VietQR Thanh Toán</button>
+  </div>
+
+  <div class="back-btn-container">
+    <a href="taikhoan.html" class="back-link">← Quay lại trung tâm tài khoản</a>
+  </div>
+
+  <!-- POPUP QR -->
+  <div class="modal-overlay" id="qrModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 style="margin: 0; color: #d4af37; font-size: 18px;">QUÉT MÃ MUA VIP</h3>
+      <p style="font-size: 12px; color: #aaa; margin: 5px 0;">Mở App Ngân Hàng hoặc Momo để quét mã</p>
+
+      <img id="qrImage" src="" alt="Mã VietQR Mua VIP" class="qr-img">
+
+      <div class="info-box">
+        <div>Ngân hàng: <span>MBBank (Ngân hàng Quân Đội)</span></div>
+        <div>Số tài khoản: <span>240589888999</span></div>
+        <div>Chủ tài khoản: <span>Vu Van Chinh</span></div>
+        <div>Số tiền: <span id="displayAmount">70,000</span> VNĐ</div>
+        <div>Nội dung CK: <span id="displayContent">VIP7D ...</span></div>
+        <div style="margin-top: 5px; color: #ff9800; font-size: 12px;">* Hệ thống tự động gia hạn VIP sau khi thanh toán thành công.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentAmount = 70000;
+    let currentPrefix = 'VIP7D';
+
+    function selectPackage(amount, tag, element) {
+      currentAmount = amount;
+      currentPrefix = 'VIP' + tag;
+      
+      document.querySelectorAll('.pkg-label').forEach(label => label.classList.remove('active'));
+      element.classList.add('active');
+      element.querySelector('input').checked = true;
+
+      updateContent();
+    }
+
+    function updateContent() {
+      const acc = document.getElementById('vipAccount').value.trim();
+      document.getElementById('contentPreview').innerText = acc ? `${currentPrefix} ${acc}` : `${currentPrefix} [Tên_Tài_Khoản]`;
+    }
+
+    function generateVipQR() {
+      const account = document.getElementById('vipAccount').value.trim();
+
+      if (!account) {
+        alert('Vui lòng nhập tài khoản Game cần mua VIP!');
+        document.getElementById('vipAccount').focus();
+        return;
+      }
+
+      const BANK_ID = 'MB';
+      const ACCOUNT_NO = '240589888999';
+      const ACCOUNT_NAME = 'Vu Van Chinh';
+      const transferContent = `${currentPrefix} ${account}`;
+
+      const qrImageUrl = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-compact2.png?amount=${currentAmount}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent(ACCOUNT_NAME)}`;
+
+      document.getElementById('qrImage').src = qrImageUrl;
+      document.getElementById('displayAmount').innerText = currentAmount.toLocaleString('vi-VN');
+      document.getElementById('displayContent').innerText = transferContent;
+      document.getElementById('qrModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('qrModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('qrModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
