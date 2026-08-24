@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trung Tâm Tài Khoản - Mu Classic | ss2.pro.vn</title>
+  <meta name="description" content="Trung tâm quản lý tài khoản game Mu Classic: Đăng ký tài khoản, Nạp WCoin tự động, Mua gói VIP.">
+  
+  <style>
+    * { 
+      box-sizing: border-box; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    body { 
+      background: #0a0a0a; 
+      color: #fff; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      padding: 20px 15px; 
+    }
+    
+    .hub-card { 
+      background: rgba(20, 20, 20, 0.95); 
+      width: 100%; 
+      max-width: 460px; 
+      border-radius: 14px; 
+      padding: 30px 25px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.85); 
+      border: 1px solid #d4af37; 
+      text-align: center;
+    }
+
+    .hub-header { 
+      border-bottom: 1px solid #333; 
+      padding-bottom: 18px; 
+      margin-bottom: 25px; 
+    }
+    .hub-header h2 { 
+      margin: 0; 
+      color: #d4af37; 
+      font-size: 22px; 
+      text-transform: uppercase; 
+      letter-spacing: 1.5px; 
+    }
+    .hub-header p { 
+      margin: 6px 0 0; 
+      color: #aaa; 
+      font-size: 13px; 
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #161616;
+      border: 1px solid #333;
+      padding: 16px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.25s ease;
+    }
+    .menu-item:hover {
+      background: #222;
+      border-color: #d4af37;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+    }
+
+    .item-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+    }
+    .item-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid #d4af37;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d4af37;
+      font-size: 18px;
+    }
+    .item-text h4 {
+      margin: 0;
+      font-size: 16px;
+      color: #f1f1f1;
+      font-weight: 600;
+    }
+    .item-text p {
+      margin: 3px 0 0;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .item-arrow {
+      color: #d4af37;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .back-btn-container { 
+      text-align: center; 
+      margin-top: 20px; 
+      width: 100%; 
+      max-width: 460px; 
+    }
+    .back-link { 
+      display: inline-block; 
+      color: #d4af37; 
+      text-decoration: none; 
+      border: 1px solid #d4af37; 
+      padding: 10px 15px; 
+      border-radius: 6px; 
+      font-size: 14px; 
+      width: 100%; 
+      text-align: center; 
+      transition: all 0.2s; 
+    }
+    .back-link:hover { 
+      background: #d4af37; 
+      color: #000; 
+      font-weight: bold; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hub-card">
+    <div class="hub-header">
+      <h2>Trung Tâm Tài Khoản</h2>
+      <p>Quản trị dịch vụ tự động - Máy chủ Mu Classic</p>
+    </div>
+
+    <div class="menu-grid">
+      
+      <!-- Mục 1: Đăng ký -->
+      <a href="register.html" class="menu-item">
+        <div class="item-left">
+          <div class="item-icon">📝</div>
+          <div class="item-text">
+            <h4>Đăng Ký Tài Khoản</h4>
+            <p>Tạo tài khoản tự động qua xác thực SMS</p>
+          </div>
+        </div>
+        <div class="item-arrow">→</div>
+      </a>
+
+      <!-- Mục 2: Nạp Tiền -->
+      <a href="napcoin.html" class="menu-item">
+        <div class="item-left">
+          <div class="item-icon">💳</div>
+          <div class="item-text">
+            <h4>Nạp WCoinC</h4>
+            <p>Thanh toán VietQR MBBank tự động 24/7</p>
+          </div>
+        </div>
+        <div class="item-arrow">→</div>
+      </a>
+
+      <!-- Mục 3: Mua VIP -->
+      <a href="muavip.html" class="menu-item">
+        <div class="item-left">
+          <div class="item-icon">👑</div>
+          <div class="item-text">
+            <h4>Mua Gói VIP</h4>
+            <p>Kích hoạt đặc quyền danh hiệu & tăng EXP</p>
+          </div>
+        </div>
+        <div class="item-arrow">→</div>
+      </a>
+
+
+    </div>
+  </div>
+
+  <div class="back-btn-container">
+    <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+  </div>
+
+</body>
+</html>
