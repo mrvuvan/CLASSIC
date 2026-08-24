@@ -3,41 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng Ký Tài Khoản Trực Tiếp - Mu Classic</title>
+  <title>Đăng Ký Tài Khoản Trực Tiếp - Mu Classic | ss2.pro.vn</title>
+  <meta name="description" content="Đăng ký tài khoản máy chủ Mu Classic trực tiếp và kích hoạt tức thì.">
+
   <style>
-    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #0a0a0a; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 15px; }
-    .card { background: rgba(20, 20, 20, 0.95); width: 100%; max-width: 420px; border-radius: 12px; padding: 25px; box-shadow: 0 8px 24px rgba(0,0,0,0.8); border: 1px solid #d4af37; }
-    h2 { text-align: center; color: #d4af37; margin-top: 0; text-transform: uppercase; font-size: 20px; }
-    p.desc { text-align: center; color: #aaa; font-size: 13px; margin-bottom: 20px; }
-    .form-group { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; color: #ddd; }
-    .input-box { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #444; background: #1a1a1a; color: #fff; font-size: 15px; outline: none; }
-    .input-box:focus { border-color: #d4af37; }
-    .btn-submit { width: 100%; padding: 13px; background: #d4af37; border: none; border-radius: 6px; color: #000; font-weight: bold; font-size: 15px; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
-    .btn-submit:hover { background: #f3e5ab; }
-    .btn-submit:disabled { background: #555; cursor: not-allowed; }
-    .back-btn { display: block; text-align: center; color: #d4af37; text-decoration: none; border: 1px solid #d4af37; padding: 10px; border-radius: 6px; font-size: 14px; margin-top: 15px; width: 100%; max-width: 420px; }
-    .back-btn:hover { background: #d4af37; color: #000; font-weight: bold; }
+    * { 
+      box-sizing: border-box; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    body { 
+      background: #0a0a0a; 
+      color: #fff; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      padding: 15px; 
+    }
+    .card { 
+      background: rgba(20, 20, 20, 0.95); 
+      width: 100%; 
+      max-width: 420px; 
+      border-radius: 12px; 
+      padding: 25px; 
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8); 
+      border: 1px solid #d4af37; 
+    }
+    h2 { 
+      text-align: center; 
+      color: #d4af37; 
+      margin-top: 0; 
+      text-transform: uppercase; 
+      font-size: 20px; 
+      letter-spacing: 1px;
+    }
+    p.desc { 
+      text-align: center; 
+      color: #aaa; 
+      font-size: 13px; 
+      margin-bottom: 20px; 
+    }
+    .form-group { 
+      margin-bottom: 15px; 
+    }
+    label { 
+      display: block; 
+      margin-bottom: 6px; 
+      font-weight: bold; 
+      font-size: 14px; 
+      color: #ddd; 
+    }
+    .input-box { 
+      width: 100%; 
+      padding: 12px; 
+      border-radius: 6px; 
+      border: 1px solid #444; 
+      background: #1a1a1a; 
+      color: #fff; 
+      font-size: 15px; 
+      outline: none; 
+      transition: border-color 0.2s;
+    }
+    .input-box:focus { 
+      border-color: #d4af37; 
+    }
+    .input-hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+      display: block;
+    }
+    .btn-submit { 
+      width: 100%; 
+      padding: 13px; 
+      background: #d4af37; 
+      border: none; 
+      border-radius: 6px; 
+      color: #000; 
+      font-weight: bold; 
+      font-size: 15px; 
+      cursor: pointer; 
+      text-transform: uppercase; 
+      margin-top: 10px; 
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { 
+      background: #f3e5ab; 
+    }
+    .btn-submit:disabled { 
+      background: #555; 
+      color: #888;
+      cursor: not-allowed; 
+    }
+    .back-btn { 
+      display: block; 
+      text-align: center; 
+      color: #d4af37; 
+      text-decoration: none; 
+      border: 1px solid #d4af37; 
+      padding: 10px; 
+      border-radius: 6px; 
+      font-size: 14px; 
+      margin-top: 15px; 
+      width: 100%; 
+      max-width: 420px; 
+      transition: all 0.2s;
+    }
+    .back-btn:hover { 
+      background: #d4af37; 
+      color: #000; 
+      font-weight: bold; 
+    }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <h2>Đăng Ký Tài Khoản</h2>
+    <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
     <p class="desc">Kích hoạt trực tiếp vào hệ thống Game tức thì</p>
 
     <div class="form-group">
       <label>Tài khoản Game (ID)</label>
       <input type="text" id="regId" class="input-box" maxlength="10" placeholder="Nhập tài khoản (4 - 10 ký tự)">
+      <span class="input-hint">* Viết liền không dấu, không chứa ký tự đặc biệt</span>
     </div>
 
     <div class="form-group">
       <label>Mật khẩu (Password)</label>
       <input type="password" id="regPass" class="input-box" maxlength="10" placeholder="Nhập mật khẩu (4 - 10 ký tự)">
+      <span class="input-hint">* Viết liền không dấu, từ 4 đến 10 ký tự</span>
     </div>
 
-    <button type="button" class="btn-submit" id="btnSubmit" onclick="handleDirectRegister()">Xác Nhận Đăng Ký</button>
+    <button type="button" class="btn-submit" id="btnSubmit" onclick="handleDirectRegister()">XÁC NHẬN ĐĂNG KÝ</button>
   </div>
 
   <a href="taikhoan.html" class="back-btn">← Quay lại trung tâm tài khoản</a>
@@ -47,14 +146,26 @@
       const id = document.getElementById('regId').value.trim();
       const pass = document.getElementById('regPass').value.trim();
       const btn = document.getElementById('btnSubmit');
+      const validAlphaNumeric = /^[a-zA-Z0-9]+$/;
 
       if (!id || id.length < 4 || id.length > 10) {
         alert('Tài khoản (ID) phải từ 4 đến 10 ký tự!');
         document.getElementById('regId').focus();
         return;
       }
+      if (!validAlphaNumeric.test(id)) {
+        alert('Tài khoản không được chứa khoảng cách hoặc ký tự đặc biệt!');
+        document.getElementById('regId').focus();
+        return;
+      }
+
       if (!pass || pass.length < 4 || pass.length > 10) {
         alert('Mật khẩu phải từ 4 đến 10 ký tự!');
+        document.getElementById('regPass').focus();
+        return;
+      }
+      if (!validAlphaNumeric.test(pass)) {
+        alert('Mật khẩu không được chứa khoảng cách hoặc ký tự đặc biệt!');
         document.getElementById('regPass').focus();
         return;
       }
@@ -63,10 +174,15 @@
       btn.innerText = 'ĐANG KHỞI TẠO...';
 
       try {
-        const response = await fetch('http://160.191.245.2:3005/api/register-direct', {
+        const response = await fetch('api_register.php', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ account: id, password: pass })
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            account: id,
+            password: pass
+          })
         });
 
         const result = await response.json();
@@ -76,10 +192,11 @@
           document.getElementById('regId').value = '';
           document.getElementById('regPass').value = '';
         } else {
-          alert('❌ ' + result.message);
+          alert('❌ Đăng ký thất bại: ' + (result.message || 'Không thể tạo tài khoản'));
         }
       } catch (err) {
         alert('Không thể kết nối đến máy chủ đăng ký! Vui lòng thử lại sau.');
+        console.error('Lỗi đăng ký:', err);
       } finally {
         btn.disabled = false;
         btn.innerText = 'XÁC NHẬN ĐĂNG KÝ';
