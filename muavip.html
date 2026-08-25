@@ -52,6 +52,37 @@
       font-size: 13px; 
     }
 
+    /* Thanh điều hướng Tab */
+    .nav-tabs {
+      display: flex;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 4px;
+      margin-bottom: 18px;
+      gap: 6px;
+    }
+    .tab-item {
+      flex: 1;
+      text-align: center;
+      padding: 10px 5px;
+      text-decoration: none;
+      color: #888;
+      font-weight: bold;
+      font-size: 13px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .tab-item.active {
+      background: #d4af37;
+      color: #000;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    }
+    .tab-item:not(.active):hover {
+      color: #d4af37;
+      background: rgba(212, 175, 55, 0.1);
+    }
+
     /* Bảng quyền lợi VIP */
     .perks-box {
       background: #151515;
@@ -268,6 +299,12 @@
       <p>Đặc quyền tăng tốc và nâng cao sức mạnh nhân vật</p>
     </div>
 
+    <!-- Thanh chuyển đổi 2 Tab -->
+    <div class="nav-tabs">
+      <a href="muavip.html" class="tab-item active">Chuyển Khoản Trực Tiếp</a>
+      <a href="http://id.freemu.win/muavip_wcoin.php" class="tab-item">Sử Dụng WCoin</a>
+    </div>
+
     <!-- Khung Quyền Lợi -->
     <div class="perks-box">
       <span class="perks-title">Đặc Quyền Thành Viên VIP:</span>
@@ -332,7 +369,7 @@
   </div>
 
   <div class="back-btn-container">
-    <a href="taikhoan.html" class="back-link">← Quay lại trung tâm tài khoản</a>
+    <a href="index.php" class="back-link">← Quay lại trung tâm tài khoản</a>
   </div>
 
   <!-- POPUP QR -->
