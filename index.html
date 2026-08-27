@@ -124,27 +124,27 @@
         }
 
         /* =======================================================
-           1. CẤU HÌNH DÀNH RIÊNG CHO LAUNCHER (ĐÃ TĂNG TO CỤM TIÊU ĐỀ)
+           1. CẤU HÌNH CHO LAUNCHER (TĂNG TỐI ĐA KÍCH THƯỚC TIÊU ĐỀ)
            ======================================================= */
         @media (max-height: 620px) {
             body { 
                 justify-content: flex-start; 
-                padding-top: 4px; 
+                padding-top: 2px; 
                 overflow: hidden; 
             }
             .top-right-nav { top: 6px; right: 8px; gap: 5px; }
             .nav-link { padding: 4px 8px; font-size: 11px; }
 
-            /* Tăng kích thước chữ hiển thị to rõ trên khung Launcher */
-            .header-text { margin-top: 10px; margin-bottom: 6px; }
-            .title-main { font-size: 48px; -webkit-text-stroke: 1.1px #fff; }
-            .title-sub { font-size: 22px; margin-top: 1px; text-underline-offset: 4px; -webkit-text-stroke: 0.5px #fff; }
-            .title-desc { font-size: 16px; margin-top: 2px; -webkit-text-stroke: 0.5px #fff; }
-            .open-date { font-size: 15px; margin-top: 2px; }
+            /* Tăng kích cỡ chữ lớn, căn chỉnh khoảng cách dòng sát nhau */
+            .header-text { margin-top: 4px; margin-bottom: 4px; }
+            .title-main { font-size: 64px; line-height: 1; -webkit-text-stroke: 1.3px #fff; }
+            .title-sub { font-size: 29px; margin-top: 1px; text-underline-offset: 4px; -webkit-text-stroke: 0.6px #fff; }
+            .title-desc { font-size: 19px; margin-top: 2px; line-height: 1.15; -webkit-text-stroke: 0.6px #fff; }
+            .open-date { font-size: 17.5px; margin-top: 2px; }
 
-            /* Khoảng cách 6 nút menu gọn gàng, không bị mất nút cuối */
-            .center-menu { gap: 3px; margin-top: 2px; }
-            .main-btn { padding: 4px 10px; width: 235px; font-size: 12.5px; font-weight: bold; }
+            /* 6 nút menu gọn gàng, vừa vặn không chạm viền đáy */
+            .center-menu { gap: 2.5px; margin-top: 2px; }
+            .main-btn { padding: 3.5px 8px; width: 240px; font-size: 12.5px; font-weight: bold; }
         }
 
         /* =======================================================
@@ -154,8 +154,8 @@
             .nav-link { padding: 7px 14px; font-size: 13.5px; font-weight: bold; }
             
             .header-text { margin-top: 10px; margin-bottom: 16px; }
-            .title-main { font-size: 80px; -webkit-text-stroke: 1.5px #fff; }
-            .title-sub { font-size: 40px; margin-top: 4px; text-underline-offset: 6px; }
+            .title-main { font-size: 85px; -webkit-text-stroke: 1.5px #fff; }
+            .title-sub { font-size: 42px; margin-top: 4px; text-underline-offset: 6px; }
             .title-desc { font-size: 26px; margin-top: 6px; }
             .open-date { font-size: 22px; margin-top: 6px; }
 
