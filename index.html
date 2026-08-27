@@ -20,14 +20,12 @@
     <base target="_blank">
 
     <style>
-        /* Reset chuẩn giao diện gốc */
         * { 
             box-sizing: border-box; 
             margin: 0; 
             padding: 0; 
             font-family: Arial, sans-serif; 
             user-select: none;
-            -webkit-user-select: none;
         }
 
         body { 
@@ -65,7 +63,6 @@
             display: inline-block;
             transition: all 0.2s ease !important;
             cursor: pointer;
-            outline: none;
         }
 
         /* --- PHẦN TIÊU ĐỀ --- */
@@ -124,31 +121,29 @@
         }
 
         /* =======================================================
-           1. CẤU HÌNH DÀNH RIÊNG CHO LAUNCHER (ĐÃ TĂNG TO CỤM TIÊU ĐỀ)
+           1. CẤU HÌNH DÀNH RIÊNG CHO LAUNCHER (Chiều cao nhỏ <= 620px)
            ======================================================= */
         @media (max-height: 620px) {
             body { 
                 justify-content: flex-start; 
-                padding-top: 4px; 
+                padding-top: 5px; 
                 overflow: hidden; 
             }
-            .top-right-nav { top: 6px; right: 8px; gap: 5px; }
+            .top-right-nav { top: 8px; right: 10px; gap: 5px; }
             .nav-link { padding: 4px 8px; font-size: 11px; }
 
-            /* Tăng kích thước chữ hiển thị to rõ trên khung Launcher */
-            .header-text { margin-top: 10px; margin-bottom: 6px; }
-            .title-main { font-size: 48px; -webkit-text-stroke: 1.1px #fff; }
-            .title-sub { font-size: 22px; margin-top: 1px; text-underline-offset: 4px; -webkit-text-stroke: 0.5px #fff; }
-            .title-desc { font-size: 16px; margin-top: 2px; -webkit-text-stroke: 0.5px #fff; }
-            .open-date { font-size: 15px; margin-top: 2px; }
+            .header-text { margin-top: 24px; margin-bottom: 4px; }
+            .title-main { font-size: 36px; -webkit-text-stroke: 0.8px #fff; }
+            .title-sub { font-size: 17px; margin-top: 1px; text-underline-offset: 3px; }
+            .title-desc { font-size: 13.5px; margin-top: 2px; -webkit-text-stroke: 0.4px #fff; }
+            .open-date { font-size: 12.5px; margin-top: 2px; }
 
-            /* Khoảng cách 6 nút menu gọn gàng, không bị mất nút cuối */
-            .center-menu { gap: 3px; margin-top: 2px; }
-            .main-btn { padding: 4px 10px; width: 235px; font-size: 12.5px; font-weight: bold; }
+            .center-menu { gap: 3.5px; margin-top: 3px; }
+            .main-btn { padding: 4.5px 10px; width: 225px; font-size: 12.5px; font-weight: bold; }
         }
 
         /* =======================================================
-           2. CẤU HÌNH TRÌNH DUYỆT PC MÀN HÌNH LỚN
+           2. CẤU HÌNH DÀNH CHO TRÌNH DUYỆT PC (Màn hình lớn)
            ======================================================= */
         @media (min-width: 769px) and (min-height: 621px) {
             .nav-link { padding: 7px 14px; font-size: 13.5px; font-weight: bold; }
@@ -164,7 +159,7 @@
         }
 
         /* =======================================================
-           3. CẤU HÌNH ĐIỆN THOẠI DI ĐỘNG (MOBILE)
+           3. CẤU HÌNH DÀNH CHO ĐIỆN THOẠI DI ĐỘNG (MOBILE)
            ======================================================= */
         @media (max-width: 768px) and (min-height: 621px) {
             body { 
