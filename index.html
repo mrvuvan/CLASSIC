@@ -2,88 +2,186 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Mu Classic - Season 2 Cày Cuốc | freemu.win</title>
     <meta name="description" content="Mu Classic Season 2 - Máy chủ cày cuốc chuẩn hoài niệm tại freemu.win.">
     <meta name="keywords" content="Mu Online, Mu Classic, freemu.win, Mu Season 2, Muhn, muxua, mu hoai niem, mu cay cuoc">
+
+    <!-- 1. CHẶN LỖI SCRIPT TRÊN LAUNCHER -->
+    <script type="text/javascript">
+        window.onerror = function() {
+            return true;
+        };
+    </script>
+
+    <!-- 2. ÉP TẤT CẢ LIÊN KẾT MỞ BẰNG TRÌNH DUYỆT NGOÀI -->
+    <base target="_blank">
+
     <style>
         /* Reset cơ bản */
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: Arial, "Helvetica Neue", sans-serif; 
+        }
+
         body { 
-            margin: 0; padding: 0; font-family: Arial, sans-serif; 
             background: #000 url('flame.png') no-repeat center center fixed; 
-            background-size: cover; color: #fff; min-height: 100vh;
-            display: flex; flex-direction: column; align-items: center;
+            background-size: cover; 
+            color: #fff; 
+            min-height: 100vh;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
             justify-content: center;
+            position: relative;
+            padding: 20px 10px;
         }
 
-        /* --- PHẦN TIÊU ĐỀ --- */
-        .header-text { text-align: center; z-index: 5; margin-bottom: 40px; }
-        
-        .title-main { 
-            color: red; font-size: 5.25vw; font-weight: bold; 
-            -webkit-text-stroke: 1.5px #fff; text-stroke: 1.5px #fff; 
-        }
-        .title-sub { 
-            color: #ff00ff; font-size: 2.5vw; font-weight: bold; margin-top: 10px;
-            text-decoration: underline; text-underline-offset: 8px;
-            -webkit-text-stroke: 0.5px #fff; text-stroke: 0.5px #fff;
-        }
-        .title-desc { 
-            color: blue; font-size: 3vw; font-weight: bold; margin-top: 15px;
-            -webkit-text-stroke: 1.5px #fff; text-stroke: 1.5px #fff;
-        }
-        .open-date { 
-            color: #d4af37; font-size: 2.2vw; font-weight: bold; margin-top: 15px;
-            text-transform: uppercase;
-        }
-
-        /* Menu góc phải trên */
+        /* --- MENU GÓC PHẢI TRÊN --- */
         .top-right-nav { 
-            position: absolute; top: 20px; right: 20px; 
-            display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; z-index: 10; 
+            position: absolute; 
+            top: 15px; 
+            right: 15px; 
+            display: flex; 
+            flex-wrap: wrap;
+            gap: 8px; 
+            z-index: 10; 
         }
         
-        /* Cấu hình nút bấm */
+        /* Cấu hình nút bấm viền vàng */
         .nav-link, .main-btn { 
             color: #fff !important; 
             text-decoration: none !important; 
             border: 1px solid #d4af37; 
             border-radius: 4px; 
-            background: rgba(0,0,0,0.7) !important; 
+            background: rgba(0, 0, 0, 0.75) !important; 
             text-align: center; 
             display: inline-block;
-            transition: all 0.3s ease !important;
+            transition: all 0.25s ease !important;
         }
         
-        .nav-link { padding: 8px 12px; font-size: 14px; }
-        
-        /* Menu chính */
-        .center-menu { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
-        .main-btn { padding: 10px 25px; width: 220px; font-size: 16px; }
+        .nav-link { 
+            padding: 7px 12px; 
+            font-size: 13px; 
+            font-weight: bold;
+        }
 
-        /* Hiệu ứng khi di chuột vào (Hover) */
+        /* --- PHẦN TIÊU ĐỀ --- */
+        .header-text { 
+            text-align: center; 
+            z-index: 5; 
+            margin-bottom: 25px; 
+        }
+        
+        .title-main { 
+            color: #ff0000; 
+            font-size: 48px; 
+            font-weight: 900; 
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            -webkit-text-stroke: 1.5px #fff; 
+            text-stroke: 1.5px #fff; 
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+        }
+
+        .title-sub { 
+            color: #ff00ff; 
+            font-size: 24px; 
+            font-weight: bold; 
+            margin-top: 6px;
+            text-decoration: underline; 
+            text-underline-offset: 6px;
+            -webkit-text-stroke: 0.5px #fff; 
+            text-stroke: 0.5px #fff;
+        }
+
+        .title-desc { 
+            color: #0066ff; 
+            font-size: 20px; 
+            font-weight: bold; 
+            margin-top: 8px;
+            -webkit-text-stroke: 1px #fff; 
+            text-stroke: 1px #fff;
+        }
+
+        .open-date { 
+            color: #d4af37; 
+            font-size: 18px; 
+            font-weight: bold; 
+            margin-top: 8px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 4px #000, 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- MENU CHÍNH GIỮA MÀN HÌNH --- */
+        .center-menu { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 9px; 
+            width: 100%; 
+            z-index: 5;
+        }
+
+        .main-btn { 
+            padding: 10px 20px; 
+            width: 230px; 
+            font-size: 15px; 
+            font-weight: 600;
+        }
+
+        /* Hiệu ứng khi di chuột vào */
         .nav-link:hover, .main-btn:hover { 
             background: #d4af37 !important; 
             color: #000 !important; 
             font-weight: bold; 
             cursor: pointer;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+            transform: translateY(-1px);
         }
 
-        /* --- TỐI ƯU MOBILE --- */
-        @media (max-width: 768px) {
-            .title-main { font-size: 10vw; }
-            .title-sub { font-size: 5vw; }
-            .title-desc { font-size: 7vw; }
-            .open-date { font-size: 4.5vw; }
-            .top-right-nav { top: 10px; left: 10px; right: 10px; grid-template-columns: repeat(3, 1fr); }
-            .nav-link { font-size: 10px; padding: 4px; }
-            .main-btn { width: 80%; padding: 8px; font-size: 14px; }
+        /* --- TỰ ĐỘNG CO DÃN VỪA KHUNG LAUNCHER (Chiều cao dưới 650px) --- */
+        @media (max-height: 650px) {
+            body { padding: 10px 5px; justify-content: flex-start; }
+            .top-right-nav { top: 8px; right: 10px; gap: 5px; }
+            .nav-link { font-size: 11px; padding: 4px 8px; }
+            
+            .header-text { margin-top: 30px; margin-bottom: 8px; }
+            .title-main { font-size: 32px; -webkit-text-stroke: 1px #fff; }
+            .title-sub { font-size: 16px; margin-top: 2px; }
+            .title-desc { font-size: 14px; margin-top: 3px; -webkit-text-stroke: 0.5px #fff; }
+            .open-date { font-size: 12.5px; margin-top: 3px; }
+
+            .center-menu { gap: 5px; }
+            .main-btn { padding: 6px 15px; width: 195px; font-size: 13px; }
+        }
+
+        /* --- TỐI ƯU TRÊN ĐIỆN THOẠI DI ĐỘNG --- */
+        @media (max-width: 768px) and (min-height: 651px) {
+            .top-right-nav { position: relative; top: 0; right: 0; margin-bottom: 20px; justify-content: center; width: 100%; }
+            .title-main { font-size: 36px; }
+            .title-sub { font-size: 20px; }
+            .title-desc { font-size: 16px; }
+            .open-date { font-size: 14px; }
+            .main-btn { width: 85%; max-width: 280px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Menu góc phải trên -->
+    <div class="top-right-nav">
+        <a href="taigame.html" class="nav-link">Tải Game</a>
+        <a href="https://www.facebook.com/profile.php?id=61585804807617" class="nav-link">Facebook</a>
+        <a href="https://zalo.me/g/7arrpeigv9pkbwrmyrta" class="nav-link">Nhóm Zalo</a>
+        <a href="https://id.freemu.win/" class="nav-link">ĐĂNG KÝ</a>
+    </div>
+
+    <!-- Tiêu đề chính -->
     <div class="header-text">
         <div class="title-main">FreeMu</div>
         <div class="title-sub">Season 2 - Classic</div>
@@ -93,14 +191,7 @@
         <div class="open-date">Open Beta 10h Thứ 7 - Ngày 05/09/2026</div>
     </div>
 
-    <div class="top-right-nav">
-        <!-- Nút Tải -->
-        <a href="https://taigame.html" target="_blank" class="nav-link">Tải Game</a>
-        <a href="https://www.facebook.com/profile.php?id=61585804807617" target="_blank" class="nav-link">Facebook</a>
-        <a href="https://zalo.me/g/7arrpeigv9pkbwrmyrta" target="_blank" class="nav-link">Nhóm Zalo</a>
-        <a href="https://id.freemu.win/" class="nav-link">ĐĂNG KÝ</a>
-    </div>
-
+    <!-- Menu 5 nút giữa màn hình -->
     <div class="center-menu">
         <a href="thongtin.html" class="main-btn">Thông tin Server</a>
         <a href="lotrinh.html" class="main-btn">Lộ trình</a>
