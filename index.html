@@ -34,14 +34,14 @@
             background-size: cover; 
             color: #fff; 
             min-height: 100vh;
-            width: 100vw;
+            width: 100%;
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             justify-content: center;
             position: relative;
-            padding: 10px;
-            overflow: hidden;
+            padding: 15px;
+            overflow-x: hidden;
         }
 
         /* --- MENU GÓC PHẢI TRÊN --- */
@@ -71,7 +71,7 @@
             font-weight: bold;
         }
 
-        /* --- PHẦN TIÊU ĐỀ (CHUẨN FONT, MÀU & KÍCH THƯỚC TO NGUYÊN BẢN) --- */
+        /* --- PHẦN TIÊU ĐỀ (CHUẨN TRÊN PC & LAUNCHER) --- */
         .header-text { 
             text-align: center; 
             z-index: 5; 
@@ -112,14 +112,15 @@
             text-stroke: 0.8px #fff; 
         }
 
-        /* 4. Ngày Open Test / Beta Vàng Gold */
+        /* 4. Ngày Open Test / Beta VÀNG SÁNG RỰC (Bright Gold) */
         .open-date { 
-            color: #d4af37; 
+            color: #FFE600; 
             font-size: 35px; 
-            font-weight: bold; 
-            margin-top: 6px;
+            font-weight: 900; 
+            margin-top: 6px; 
             text-transform: uppercase;
-            text-shadow: 1px 1px 3px #000;
+            text-shadow: 0 0 12px rgba(255, 230, 0, 0.8), 2px 2px 4px #000;
+            -webkit-text-stroke: 0.3px #000;
         }
 
         /* --- MENU 6 NÚT GIỮA MÀN HÌNH --- */
@@ -148,11 +149,52 @@
             box-shadow: 0 0 10px rgba(212, 175, 55, 0.9);
             transform: scale(1.02);
         }
+
+        /* --- TỐI ƯU HÓA HOÀN TOÀN TRÊN ĐIỆN THOẠI DI ĐỘNG (MOBILE) --- */
+        @media (max-width: 768px) {
+            body { 
+                justify-content: flex-start;
+                padding-top: 20px;
+                padding-bottom: 30px;
+            }
+
+            /* Menu chuyển về nằm ngang giữa màn hình trên điện thoại */
+            .top-right-nav { 
+                position: relative; 
+                top: 0; 
+                right: 0; 
+                justify-content: center; 
+                flex-wrap: wrap; 
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .nav-link { 
+                font-size: 12px; 
+                padding: 6px 10px; 
+            }
+
+            /* Co giãn font chữ vừa vặn mọi màn hình smartphone */
+            .header-text { margin-bottom: 20px; }
+            .title-main { font-size: 46px; -webkit-text-stroke: 0.8px #fff; }
+            .title-sub { font-size: 24px; text-underline-offset: 4px; }
+            .title-desc { font-size: 16px; margin-top: 5px; -webkit-text-stroke: 0.4px #fff; }
+            .open-date { font-size: 14.5px; margin-top: 6px; }
+
+            /* Nút bấm trải rộng dễ thao tác cảm ứng */
+            .center-menu { gap: 8px; }
+            .main-btn { 
+                width: 88%; 
+                max-width: 320px; 
+                padding: 10px 15px; 
+                font-size: 14.5px; 
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Menu góc phải trên -->
+    <!-- Menu góc phải trên (Tự động canh giữa trên Mobile) -->
     <div class="top-right-nav">
         <a href="taigame.html" class="nav-link">Tải Game</a>
         <a href="https://www.facebook.com/profile.php?id=61585804807617" class="nav-link">Facebook</a>
