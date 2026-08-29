@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Nạp Coin Tự Động - Mu Classic | ss2.pro.vn</title>
-  <meta name="description" content="Trang nạp WCoinC tự động qua VietQR MBBank cho Mu Classic - ss2.pro.vn. Nhanh chóng, uy tín, an toàn.">
-  <meta name="keywords" content="Mu Online, Mu Classic, ss2.pro.vn, Nap coin mu classic, Nap WCoin, Mu Season 2">
+  <title>Nạp Coin Tự Động - Mu Classic | freemu.win</title>
+  <meta name="description" content="Trang nạp WCoinC tự động qua VietQR MBBank cho Mu Classic - freemu.win. Nhanh chóng, uy tín, an toàn.">
+  <meta name="keywords" content="Mu Online, Mu Classic, freemu.win, Nap coin mu classic, Nap WCoin, Mu Season 2">
   
   <style>
     * { 
@@ -54,7 +54,7 @@
     }
 
     .form-group { 
-      margin-bottom: 18px; 
+      margin-bottom: 16px; 
     }
     .form-group label { 
       display: block; 
@@ -93,7 +93,7 @@
 
     .quick-amounts { 
       display: grid; 
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(3, 1fr); 
       gap: 8px; 
       margin-top: 8px; 
     }
@@ -101,11 +101,11 @@
       background: #222; 
       border: 1px solid #444; 
       color: #ccc; 
-      padding: 10px; 
+      padding: 9px 5px; 
       border-radius: 6px; 
       cursor: pointer; 
-      font-size: 13px; 
-      font-weight: 500;
+      font-size: 12.5px; 
+      font-weight: 500; 
       transition: all 0.2s; 
     }
     .btn-quick:hover { 
@@ -113,6 +113,32 @@
       color: #000; 
       font-weight: bold; 
       border-color: #d4af37; 
+    }
+
+    /* KHUNG GHI CHÚ TỶ LỆ QUY ĐỔI & ĐẠI LÝ */
+    .rate-info-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-left: 4px solid #d4af37;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .rate-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #ddd;
+    }
+    .rate-row span.gold {
+      color: #FFE600;
+      font-weight: bold;
+    }
+    .rate-row span.bonus {
+      color: #00ff7f;
+      font-weight: 900;
     }
 
     .btn-submit { 
@@ -126,14 +152,14 @@
       font-size: 16px; 
       cursor: pointer; 
       text-transform: uppercase; 
-      margin-top: 10px; 
+      margin-top: 12px; 
       transition: background 0.2s, transform 0.1s; 
     }
     .btn-submit:hover { 
       background: #f3e5ab; 
     }
-    .btn-submit:active {
-      transform: scale(0.98);
+    .btn-submit:active { 
+      transform: scale(0.98); 
     }
 
     .back-btn-container { 
@@ -181,7 +207,7 @@
       text-align: center; 
       position: relative; 
       border: 1px solid #d4af37; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9); 
     }
     .close-btn { 
       position: absolute; 
@@ -190,10 +216,10 @@
       font-size: 26px; 
       color: #aaa; 
       cursor: pointer; 
-      line-height: 1;
+      line-height: 1; 
     }
-    .close-btn:hover {
-      color: #fff;
+    .close-btn:hover { 
+      color: #fff; 
     }
     .qr-img { 
       width: 100%; 
@@ -201,7 +227,7 @@
       border-radius: 8px; 
       margin: 15px 0; 
       border: 2px solid #fff; 
-      background: #fff;
+      background: #fff; 
     }
     .info-box { 
       text-align: left; 
@@ -216,11 +242,11 @@
       color: #d4af37; 
       font-weight: bold; 
     }
-    .warning-note {
-      color: #ff9800;
-      font-size: 12px;
-      margin-top: 10px;
-      line-height: 1.4;
+    .warning-note { 
+      color: #ff9800; 
+      font-size: 12px; 
+      margin-top: 10px; 
+      line-height: 1.4; 
     }
   </style>
 </head>
@@ -229,7 +255,7 @@
   <div class="nap-card">
     <div class="nap-header">
       <h2>Ủng Hộ Phát Triển</h2>
-      <p>Hệ thống nạp WCoinC tự động 24/7 - ss2.pro.vn</p>
+      <p>Hệ thống nạp WCoinC tự động 24/7 - freemu.win</p>
     </div>
 
     <div class="form-group">
@@ -245,11 +271,25 @@
     <div class="form-group">
       <label>2. Số tiền nạp (VNĐ)</label>
       <input type="number" id="amountInput" class="input-box" placeholder="Tối thiểu 10,000 đ" step="10000">
+      
       <div class="quick-amounts">
         <button type="button" class="btn-quick" onclick="setAmount(50000)">50,000 đ</button>
         <button type="button" class="btn-quick" onclick="setAmount(100000)">100,000 đ</button>
         <button type="button" class="btn-quick" onclick="setAmount(200000)">200,000 đ</button>
         <button type="button" class="btn-quick" onclick="setAmount(500000)">500,000 đ</button>
+        <button type="button" class="btn-quick" onclick="setAmount(1000000)">1,000,000 đ</button>
+        <button type="button" class="btn-quick" onclick="setAmount(2000000)">2,000,000 đ</button>
+      </div>
+
+      <div class="rate-info-box">
+        <div class="rate-row">
+          <span>❖ Tỷ lệ quy đổi:</span> 
+          <span class="gold">1:1 (100.000 VNĐ = 100.000 WCoin)</span>
+        </div>
+        <div class="rate-row">
+          <span>❖ Đại Lý:</span> 
+          <span class="bonus">Nạp từ 2.000.000 VNĐ tặng thêm +30% WCoin</span>
+        </div>
       </div>
     </div>
 
@@ -308,12 +348,12 @@
         return;
       }
 
-      // Thông tin tài khoản nhận tiền
+      // Cấu hình tài khoản nhận tiền MBBank
       const BANK_ID = 'MB';
       const ACCOUNT_NO = '240589888999';
       const ACCOUNT_NAME = 'Vu Van Chinh';
       
-      // Tạo đúng cú pháp NAMEID <id> để khớp với Regex của VPS
+      // Tạo đúng cú pháp NAMEID <id> để khớp với Regex của server3_qr.js
       const transferContent = 'NAMEID ' + account;
 
       // Tạo URL mã VietQR trực tiếp
@@ -330,7 +370,6 @@
       document.getElementById('qrModal').style.display = 'none';
     }
 
-    // Đóng Modal khi nhấp ra ngoài vùng khung popup
     window.onclick = function(event) {
       const modal = document.getElementById('qrModal');
       if (event.target === modal) {
