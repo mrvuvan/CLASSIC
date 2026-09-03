@@ -43,7 +43,7 @@ $payload = json_encode(array(
 ));
 
 // 2. Gửi dữ liệu từ Hosting sang Windows VPS
-$ch = curl_init('http://160.191.245.2:3005/api/register-direct');
+$ch = curl_init('http://160.191.244.129:3005/api/register-direct');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
